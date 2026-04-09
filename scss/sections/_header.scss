@@ -17,12 +17,7 @@
         );
         height: 1px;
         pointer-events: none;
-        background: linear-gradient(
-          90deg,
-          transparent 0%,
-          rgba($color-white, $separator-fade-white-peak) 50%,
-          transparent 100%
-        );
+        background: rgba($color-white, 0.25);
       }
     }
     

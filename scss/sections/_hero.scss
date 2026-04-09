@@ -1,0 +1,119 @@
+// Hero section styles
+.hero {
+    background: $color-brand-primary;
+    padding: $space-16 0;
+    @include section-diagonal-padding-bottom($space-16);
+    @include section-diagonal-bottom;
+    overflow: hidden;
+    
+    &__title {
+      color: $color-white;
+      font-size: clamp($font-size-3xl, 5vw, 3.25rem);
+      font-weight: $font-weight-bold;
+      line-height: $line-height-tight;
+      margin-bottom: $space-4;
+      max-width: 350px;
+    }
+    
+    &__subtitle {
+      color: rgba($color-white, 0.9);
+      font-size: clamp($font-size-lg, 0.45vw, $font-size-lg);
+      line-height: $line-height-relaxed;
+      margin-bottom: $space-12;
+      max-width: 400px;
+    }
+    
+    &__cta {
+      // Override btn-primary pour le Hero : bouton blanc
+        background: $color-white;
+        border-color: $color-white;
+        color: $color-dark-blue;
+        margin-bottom: $space-16;
+        display: inline-flex;
+        align-items: center;
+        
+        &:hover,
+        &:focus {
+            background: darken($color-white, 12%);
+            border-color: darken($color-white, 12%);
+            color: $color-dark-blue;
+        }
+    }
+    
+    &__partners {
+      align-items: center;
+      display: flex;
+      gap: $space-10;
+      &-label {
+        color: $color-white;
+        font-size: clamp($font-size-sm, 0.22vw, 0.875rem);
+        font-weight: $font-weight-medium;
+        margin-bottom: 0;
+      }
+      
+      &-list {
+        display: flex;
+        gap: $space-8;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex-wrap: wrap;
+      }
+      
+      &-item {
+        // Container logo
+      }
+      
+      &-logo {
+        height: 30px;
+        width: auto;
+        opacity: 0.8;
+        filter: brightness(0) invert(1); // Logos blancs sur fond bleu
+        transition: $transition-opacity;
+        
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+    
+    &__card {
+      background: $color-white;
+      border-radius: $radius-xl;
+      border-bottom-right-radius: calc($radius-xl * 4);
+      padding: $space-8;
+      box-shadow: $shadow-2xl;
+      
+      &-img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+    
+    // Responsive
+    @include bp-down(lg) {
+      padding: $space-12 0;
+      @include section-diagonal-padding-bottom($space-12, $space-12);
+      
+      &__title {
+        font-size: clamp($font-size-xl, 3vw, $font-size-2xl);
+      }
+      
+      &__subtitle {
+        font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+      }
+      
+      &__card {
+        margin-top: $space-8;
+      }
+      
+      &__partners-list {
+        gap: $space-4;
+      }
+      
+      &__partners-logo {
+        height: 24px;
+      }
+    }
+  }

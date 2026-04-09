@@ -1,0 +1,192 @@
+// =============================================================================
+// Design tokens — `scss/foundation/_tokens.scss`
+// Import depuis la racine SCSS : `@import 'foundation/tokens';`
+// =============================================================================
+
+// --- Couleurs : brand & accents ---
+$color-brand-primary: #028aff;
+$color-accent-green: #5ccaa7;
+$color-accent-yellow: #febe3d;
+
+// --- Couleurs de base ---
+$color-dark-blue: #161347;
+$color-white: #ffffff;
+$color-black: #000000;
+
+// --- Neutres (50 → 900) ---
+$color-neutral-50: #f9fafb;
+$color-neutral-100: #f3f4f6;
+$color-neutral-200: #e5e7eb;
+$color-neutral-300: #d1d5db;
+$color-neutral-400: #9ca3af;
+$color-neutral-500: #6b7280;
+$color-neutral-600: #4b5563;
+$color-neutral-700: #374151;
+$color-neutral-800: #1f2937;
+$color-neutral-900: #111827;
+
+// --- Surfaces ---
+$color-surface-primary: $color-white;
+$color-surface-muted: $color-neutral-100;
+$color-surface-dark: $color-dark-blue;
+$color-surface-awards: lighten($color-dark-blue, 80%);
+
+// --- Texte & bordures ---
+$color-text-primary: $color-neutral-900;
+$color-text-secondary: $color-neutral-700;
+$color-text-muted: lighten($color-neutral-700, 10%);
+$color-text-inverse: $color-white;
+
+$color-border-light: $color-neutral-200;
+$color-border-default: $color-neutral-300;
+$color-border-strong: $color-neutral-500;
+
+/// Pic central des séparateurs « fade » (transparent → blanc léger → transparent), ex. footer / header.
+$separator-fade-white-peak: 0.14;
+
+// --- Familles ---
+$font-family-primary: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-family-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+// --- Poids (alignés sur Nunito 200–1000) ---
+$font-weight-extralight: 200;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-black: 900;
+
+// --- Tailles (rem) : échelle croissante ; le corps = 1rem (base de lecture)
+// 1er argument des clamp() dans les composants ; pas de *-min / *-max dédiés dans les tokens.
+//
+// Important : ne pas passer ces clamp comme `$font-size-base` Bootstrap (`_variables.scss` :
+// `$font-size-root`) — Bootstrap multiplie la base pour lead, small, etc.
+$font-size-root: 1rem;
+
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-body: 1rem;
+$font-size-md: 1.125rem;
+$font-size-lg: 1.25rem;
+$font-size-xl: 1.5rem;
+$font-size-2xl: 2rem;
+$font-size-3xl: 3rem;
+
+// --- Interlignes ---
+$line-height-tight: 1.25;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.75;
+$line-height-loose: 2;
+
+// --- Letter-spacing ---
+$letter-spacing-tight: -0.025em;
+$letter-spacing-normal: 0;
+$letter-spacing-wide: 0.025em;
+$letter-spacing-wider: 0.05em;
+
+// Titres : réutiliser l’échelle — ex. h1 → `$font-size-3xl` ; h2 → `clamp($font-size-xl, …, $font-size-2xl)` ; h3 → `clamp($font-size-lg, …, $font-size-xl)`.
+
+// --- Breakpoints (source unique : media queries du projet + `$grid-breakpoints` Bootstrap) ---
+// Modifier uniquement ce map pour recaler grille BS, navbar `collapse` et sections custom.
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+// `bp-min`, `bp-max`, `bp-down`, `bp-up` → `foundation/_mixins.scss`
+
+// --- Espacement : base ---
+$space-base: 1rem;
+
+// --- Échelle ---
+$space-0: 0;
+$space-1: 0.25rem;
+$space-2: 0.5rem;
+$space-3: 0.75rem;
+$space-4: 1rem;
+$space-5: 1.25rem;
+$space-6: 1.5rem;
+$space-8: 2rem;
+$space-10: 2.5rem;
+$space-12: 3rem;
+$space-16: 4rem;
+$space-20: 5rem;
+$space-24: 6rem;
+$space-32: 8rem;
+$space-40: 10rem;
+
+// --- Gaps flex/grid ---
+$gap-xs: 0.5rem;
+$gap-sm: 0.75rem;
+$gap-md: 1rem;
+$gap-lg: 1.5rem;
+$gap-xl: 2rem;
+
+// --- Ombres ---
+$shadow-none: none;
+$shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+$shadow-base: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-md: 0 6px 12px -2px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+$shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+$shadow-brand: 0 8px 24px rgba(14, 165, 233, 0.15);
+$shadow-accent-green: 0 8px 24px rgba(16, 185, 129, 0.15);
+$shadow-accent-yellow: 0 8px 24px rgba(253, 176, 34, 0.15);
+
+$shadow-primary: $shadow-brand;
+$shadow-success: $shadow-accent-green;
+$shadow-warning: $shadow-accent-yellow;
+
+// --- Bordures : épaisseurs ---
+$border-width-0: 0;
+$border-width-1: 1px;
+$border-width-2: 2px;
+$border-width-4: 4px;
+
+// --- Rayons ---
+$radius-none: 0;
+$radius-xs: 0.25rem;
+$radius-sm: 0.375rem;
+$radius-base: 0.5rem;
+$radius-md: 0.75rem;
+$radius-lg: 1rem;
+$radius-xl: 1.5rem;
+$radius-2xl: 2rem;
+$radius-full: 9999px;
+
+// --- Animations : durées ---
+$duration-instant: 0ms;
+$duration-fast: 150ms;
+$duration-base: 300ms;
+$duration-slow: 500ms;
+$duration-slower: 700ms;
+
+// --- Easings ---
+$ease-linear: linear;
+$ease-in: cubic-bezier(0.4, 0, 1, 1);
+$ease-out: cubic-bezier(0, 0, 0.2, 1);
+$ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+$ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+// --- Transitions ---
+$transition-all: all $duration-base $ease-in-out;
+$transition-color: color $duration-base $ease-in-out;
+$transition-background: background-color $duration-base $ease-in-out;
+$transition-transform: transform $duration-base $ease-out;
+$transition-opacity: opacity $duration-base $ease-in-out;
+$transition-shadow: box-shadow $duration-base $ease-in-out;
+
+$transition-hover-lift:
+  transform $duration-base $ease-out,
+  box-shadow $duration-base $ease-out;
+
+// --- Sections : coupe diagonale du bas (hero, bandeaux pleine largeur, etc.) ---
+$section-diagonal-angle: 2deg;

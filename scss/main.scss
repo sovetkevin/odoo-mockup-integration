@@ -1,0 +1,23 @@
+// Point d’entrée (voir `index.html`). Ordre : foundation → Bootstrap Icons → composants → sections.
+
+@import 'foundation/tokens';
+@import 'foundation/mixins';
+@import 'foundation/variables';
+@import 'foundation/bootstrap-stack';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+@import 'foundation/custom-properties';
+@import 'elements/index';
+
+@import 'sections/custom';
+@import 'sections/header';
+@import 'sections/hero';
+@import 'sections/arguments';
+@import 'sections/tools';
+@import 'sections/features';
+@import 'sections/technology';
+@import 'sections/install';
+@import 'sections/infinite-solutions';
+@import 'sections/awards';
+@import 'sections/faq';
+@import 'sections/footer';

@@ -1,0 +1,202 @@
+// Footer
+.footer {
+  background: $color-dark-blue;
+  color: $color-white;
+  padding: $space-16 0 $space-8;
+  @include section-diagonal-padding-top($space-16);
+  @include section-diagonal-top;
+  overflow: hidden;
+  
+  &__cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: $space-12;
+    margin-bottom: $space-12;
+    @include el-separator-fade-x-bottom;
+    
+    &-content {
+      flex: 1;
+      max-width: 600px;
+    }
+    
+    &-title {
+      font-size: clamp($font-size-xl, 3vw, $font-size-2xl);
+      font-weight: $font-weight-semibold;
+      margin: 0 0 $space-2;
+      color: $color-white;
+    }
+    
+    &-subtitle {
+      color: rgba($color-white, 0.8);
+      margin: 0;
+      font-size: clamp($font-size-lg, 0.45vw, $font-size-lg);
+    }
+    
+    &-buttons {
+      display: flex;
+      gap: $space-5;
+      flex-shrink: 0;
+    }
+    
+    &-btn {
+      &--doc {
+        i {
+          color: $color-brand-primary; // Icône bleue sur fond blanc
+        }
+      }
+    }
+  }
+  
+  &__content {
+    margin-bottom: $space-12;
+  }
+  
+  &__logo {
+    height: 36px;
+    margin-bottom: $space-6;
+    filter: brightness(0) invert(1); // Logo blanc
+  }
+  
+  &__description {
+    color: rgba($color-white, 0.6);
+    font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+    line-height: $line-height-relaxed;
+    margin-bottom: $space-6;
+  }
+  
+  &__social {
+    display: flex;
+    gap: $space-4;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    &-link {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      width: 40px;
+      height: 40px;
+      color: rgba($color-white, 0.6);
+      text-decoration: none;
+      transition: color $duration-base $ease-out;
+      
+      &:hover {
+        color: $color-white;
+      }
+      
+      i {
+        font-size: clamp($font-size-lg, 0.6vw, $font-size-xl);
+      }
+    }
+  }
+  
+  &__nav {
+    &-title {
+      font-weight: $font-weight-semibold;
+      font-size: clamp($font-size-md, 0.45vw, $font-size-lg);
+      margin-bottom: $space-4;
+      color: $color-white;
+    }
+    
+    &-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      
+      li {
+        margin-bottom: $space-2;
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    
+    &-link {
+      color: rgba($color-white, 0.6);
+      text-decoration: none;
+      font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+      transition: $transition-color;
+      
+      &:hover {
+        color: $color-white;
+      }
+    }
+  }
+  
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: $space-8;
+    @include el-separator-fade-x-top;
+  }
+  
+  &__copyright {
+    color: rgba($color-white, 0.6);
+    margin: 0;
+    font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+    
+    strong {
+      font-weight: $font-weight-semibold;
+      color: rgba($color-white, 0.8);
+    }
+  }
+  
+  &__legal {
+    display: flex;
+    gap: $space-8;
+    
+    &-link {
+      color: rgba($color-white, 0.6);
+      text-decoration: none;
+      font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+      transition: $transition-color;
+      
+      &:hover {
+        color: $color-white;
+      }
+    }
+  }
+  
+  // Responsive
+  @include bp-down(lg) {
+    padding: $space-12 0 $space-6;
+    @include section-diagonal-padding-top($space-12, $space-12);
+    
+    &__cta {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $space-6;
+      padding-bottom: $space-8;
+      margin-bottom: $space-8;
+      
+      &-buttons {
+        width: 100%;
+        flex-direction: column;
+        
+        .btn {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+    }
+    
+    &__content {
+      margin-bottom: $space-8;
+    }
+    
+    &__bottom {
+      flex-direction: column;
+      gap: $space-4;
+      align-items: flex-start;
+      padding-top: $space-6;
+    }
+    
+    &__legal {
+      gap: $space-4;
+    }
+  }
+}

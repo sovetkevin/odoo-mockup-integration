@@ -1,0 +1,174 @@
+// Arguments : styles partagés (Tools, Features, Technology, Install)
+// Fichiers dédiés : `_tools.scss`, `_features.scss`, `_technology.scss`, `_install.scss`
+
+.section {
+    padding: $space-16 0;
+    
+    &__img {
+      width: 100%;
+      height: auto;
+      border-radius: $radius-lg;
+    }
+    
+    &__badge {
+      display: inline-block;
+      margin-bottom: $space-6;
+      padding: $space-2 $space-4;
+      font-size: clamp($font-size-sm, 0.22vw, 0.875rem);
+      font-weight: $font-weight-semibold;
+      border-radius: $radius-full;
+    }
+    
+    &__title {
+      font-size: clamp($font-size-xl, 3vw, $font-size-2xl);
+      font-weight: $font-weight-semibold;
+      margin-bottom: $space-8;
+      line-height: $line-height-tight;
+    }
+    
+    &__text {
+      color: $color-text-muted;
+      font-size: clamp($font-size-md, 0.45vw, $font-size-lg);
+      margin-bottom: $space-10;
+      line-height: $line-height-relaxed;
+    }
+    
+    // Responsive mobile : image toujours en haut
+    @include bp-down(lg) {
+      padding: $space-12 0;
+      
+      &__title {
+        font-size: clamp($font-size-lg, 1.75vw, $font-size-xl);
+      }
+    }
+  }
+  
+  // Feature list (checkmarks)
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    &__item {
+      display: flex;
+      align-items: center;
+      gap: $space-3;
+      margin-bottom: $space-4;
+    }
+    
+    &__icon {
+      color: $color-accent-green;
+      font-size: clamp($font-size-lg, 1.25vw, $font-size-2xl);
+      flex-shrink: 0;
+    }
+    
+    &__text {
+      font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+      color: $color-accent-green;
+    }
+  }
+  
+  // Link with underline (Technology section)
+  .link-underline {
+    color: $color-brand-primary;
+    text-decoration: none;
+    border-bottom: 3px solid $color-brand-primary;
+    padding-bottom: $space-1;
+    font-weight: $font-weight-medium;
+    display: inline-block;
+    transition: $transition-color;
+    
+    &:hover {
+      color: darken($color-brand-primary, 10%);
+      border-bottom-color: darken($color-brand-primary, 10%);
+    }
+  }
+  
+  // App Store buttons (Install section)
+  .app-stores {
+    margin-top: $space-16;
+    display: flex;
+    gap: $space-8;
+    flex-wrap: wrap;
+    
+    &__btn {
+      display: flex;
+      align-items: center;
+      gap: $space-4;
+      padding: $space-2 $space-6;
+      background: $color-black;
+      border-radius: $radius-base;
+      text-decoration: none;
+      color: $color-white;
+      transition: $transition-background;
+      
+      &:hover {
+        background: lighten($color-black, 20%);
+        color: $color-white;
+      }
+    }
+    
+    &__icon {
+      font-size: 2rem;
+      color: $color-white;
+    }
+    
+    &__text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    &__label {
+      font-size: clamp($font-size-xs, 0.2vw, 0.75rem);
+      opacity: 0.7;
+      line-height: 1;
+      margin-bottom: $space-1;
+    }
+    
+    &__store {
+      font-size: clamp($font-size-lg, 0.45vw, $font-size-md);
+      font-weight: $font-weight-semibold;
+      line-height: 1;
+    }
+  }
+  
+  // Video preview component
+  .video-preview {
+    position: relative;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-lg;
+    overflow: hidden;
+    
+    &__thumbnail {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    &__btn {
+      position: absolute;
+      top: $space-4;
+      left: $space-4;
+      background: rgba($color-white, 0.95);
+      border: none;
+      padding: $space-2 $space-4;
+      border-radius: $radius-base;
+      font-size: clamp($font-size-sm, 0.22vw, 0.875rem);
+      font-weight: $font-weight-medium;
+      color: $color-dark-blue;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      transition: $transition-background;
+      box-shadow: $shadow-md;
+      
+      &:hover {
+        background: $color-white;
+      }
+      
+      i {
+        font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+      }
+    }
+  }

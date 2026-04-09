@@ -1,0 +1,177 @@
+// Mixins & petites fonctions — `scss/foundation/_mixins.scss`
+// À charger après `foundation/tokens` (voir `main.scss`).
+
+// =============================================================================
+// Breakpoints (s’appuient sur `$breakpoints` dans `_tokens.scss`)
+// =============================================================================
+
+/// `min-width` au seuil nommé (ex. `bp-min(lg)` → 992px).
+@function bp-min($name) {
+  $v: map-get($breakpoints, $name);
+  @if $v == null {
+    @error "Breakpoint inconnu : #{$name}. Clés : xs, sm, md, lg, xl, xxl.";
+  }
+  @return $v;
+}
+
+/// `max-width` juste en dessous du seuil (ex. `bp-max(lg)` → 991px).
+@function bp-max($name) {
+  $v: bp-min($name);
+  @if $v == 0 {
+    @error "bp-max(xs) : utiliser un seuil non nul (sm, md, lg, …).";
+  }
+  @return $v - 1px;
+}
+
+/// Largeurs strictement sous le breakpoint nommé.
+@mixin bp-down($name) {
+  @media (max-width: bp-max($name)) {
+    @content;
+  }
+}
+
+/// À partir du breakpoint nommé (mobile-first).
+@mixin bp-up($name) {
+  @media (min-width: bp-min($name)) {
+    @content;
+  }
+}
+
+// =============================================================================
+// Sections : bord bas ou haut incliné (pour le fond)
+// =============================================================================
+
+/// Miroir horizontal (symétrie / échange gauche–droite sur le bord incliné).
+@mixin section-diagonal-bottom($angle: $section-diagonal-angle) {
+  position: relative;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    0 calc(100% - 100vw * tan(#{$angle}))
+  );
+}
+
+/// Marge bas supplémentaire : la coupe diagonale réduit visuellement la hauteur du bloc.
+@mixin section-diagonal-padding-bottom($padding-y, $clamp-max: $space-20) {
+  padding-bottom: calc(#{$padding-y} + clamp(#{$space-6}, 6vw, #{$clamp-max}));
+}
+
+/// Coupe haute inclinée (miroir de `section-diagonal-bottom`) : s’aligne avec la fin inclinée d’une section au-dessus.
+/// Même symétrie gauche–droite que la coupe basse.
+@mixin section-diagonal-top($angle: $section-diagonal-angle) {
+  position: relative;
+  clip-path: polygon(
+    0 calc(100vw * tan(#{$angle})),
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+}
+
+/// Marge haute supplémentaire : compense la partie « mangée » par la coupe du haut.
+@mixin section-diagonal-padding-top($padding-y, $clamp-max: $space-20) {
+  padding-top: calc(#{$padding-y} + clamp(#{$space-6}, 6vw, #{$clamp-max}));
+}
+
+// =============================================================================
+// Séparateurs : ligne horizontale en dégradé (bords de blocs sur fond sombre)
+// =============================================================================
+
+/// Bord bas : transparent → blanc léger au centre → transparent.
+@mixin el-separator-fade-x-bottom($peak-alpha: $separator-fade-white-peak) {
+  position: relative;
+  border-bottom: none;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba($color-white, $peak-alpha) 50%,
+      transparent 100%
+    );
+  }
+}
+
+/// Bord haut : même dégradé horizontal.
+@mixin el-separator-fade-x-top($peak-alpha: $separator-fade-white-peak) {
+  position: relative;
+  border-top: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 1px;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba($color-white, $peak-alpha) 50%,
+      transparent 100%
+    );
+  }
+}
+
+// =============================================================================
+// Boutons (styles dans `elements/_buttons.scss`)
+// =============================================================================
+
+/// Couleur de texte lisible sur un fond (approximation luminosité).
+@function el-fg-on($background) {
+  @if lightness($background) > 58% {
+    @return $color-dark-blue;
+  }
+  @return $color-white;
+}
+
+@mixin el-button-layout {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-2;
+  font-weight: $font-weight-semibold;
+  border-radius: $radius-base;
+  transition: $transition-all;
+}
+
+/// Bouton plein : fond + hover (assombrissement marqué au survol).
+@mixin el-button-solid($bg, $bg-hover: darken($bg, 15%)) {
+  color: el-fg-on($bg);
+  background-color: $bg;
+  border-color: $bg;
+
+  &:hover,
+  &:focus {
+    color: el-fg-on($bg-hover);
+    background-color: $bg-hover;
+    border-color: $bg-hover;
+  }
+}
+
+// =============================================================================
+// Badges (styles dans `elements/_badges.scss`)
+// =============================================================================
+
+@mixin el-badge-shell {
+  display: inline-block;
+  padding: $space-2 $space-4;
+  border-radius: $radius-full;
+  font-size: clamp($font-size-sm, 0.22vw, 0.875rem);
+  font-weight: $font-weight-semibold;
+  line-height: 1;
+}
+
+@mixin el-badge-tone($bg) {
+  background-color: $bg;
+  color: $color-white;
+}

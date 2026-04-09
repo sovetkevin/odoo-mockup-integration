@@ -1,0 +1,180 @@
+// Awards section
+.awards {
+  // Piste du carrousel : hauteur de référence pour l’alternance flex-start / flex-end
+  // (les cartes gardent une hauteur naturelle selon le contenu).
+  $awards-carousel-track-height: 350px; // ~300px + marge zigzag (équivalent ancien layout)
+
+  background: $color-surface-awards;
+  padding: $space-32 0;
+  @include section-diagonal-padding-bottom($space-32);
+  @include section-diagonal-bottom;
+  overflow-x: hidden; // ✅ Coupe le débordement horizontal ici
+  
+  &__header {
+    text-align: left;
+    margin-bottom: $space-20;
+    
+    .badge {
+      margin-bottom: $space-8;
+    }
+  }
+  
+  &__title {
+    font-size: clamp($font-size-lg, 1.75vw, $font-size-xl);
+    font-weight: $font-weight-semibold;
+    margin: 0;
+    line-height: $line-height-tight;
+  }
+  
+  &__carousel-wrapper {
+    overflow: visible; // ✅ Permet au hover de monter sans être coupé
+    position: relative;
+  }
+  
+  &__carousel {
+    display: flex;
+    gap: $space-8;
+    align-items: stretch;
+    min-height: $awards-carousel-track-height;
+  }
+  
+  &__card {
+    background: $color-white;
+    border-radius: $radius-lg;
+    padding: $space-12 $space-12;
+    box-shadow: $shadow-lg;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    gap: $space-8;
+    width: 280px;
+    flex-shrink: 0;
+    transition: transform $duration-base $ease-out,
+      box-shadow $duration-base $ease-out;
+
+    // Une carte sur deux : bas / haut de la piste (piste = min-height du carrousel)
+    &:nth-child(odd) {
+      align-self: flex-end;
+    }
+
+    &:nth-child(even) {
+      align-self: flex-start;
+    }
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: $shadow-2xl;
+      cursor: pointer;
+    }
+    
+    &-logo {
+      height: 40px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      transform : scale(1.2);
+    }
+    
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: $space-2;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+    }
+    
+    // Type Rating
+    &--rating {
+      .awards__card-rating {
+        display: flex;
+        justify-content: center;
+        gap: $space-1;
+        font-size: clamp($font-size-lg, 0.6vw, $font-size-xl);
+        margin-bottom: $space-4;
+        
+        .bi-star-fill {
+          color: $color-accent-yellow;
+        }
+        
+        .bi-star {
+          color: $color-neutral-300;
+        }
+      }
+      
+      .awards__card-score {
+        font-weight: $font-weight-semibold;
+        font-size: clamp($font-size-lg, 0.6vw, $font-size-xl);
+        margin: 0;
+        color: $color-text-primary;
+      }
+      
+      .awards__card-reviews {
+        font-size: clamp($font-size-sm, 0.22vw, 0.875rem);
+        color: $color-text-muted;
+      }
+    }
+    
+    // Type Description
+    &--desc {
+      .awards__card-text {
+        color: $color-text-muted;
+        margin: 0 0 $space-4 0;
+        line-height: $line-height-relaxed;
+        font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+        overflow-wrap: break-word;
+        word-break: break-word;
+      }
+      
+      .awards__card-link {
+        color: $color-dark-blue;
+        text-decoration: none;
+        border-bottom: 3px solid $color-dark-blue;
+        padding-bottom: $space-1;
+        font-weight: $font-weight-medium;
+        transition: $transition-color;
+        white-space: nowrap;
+        
+        &:hover {
+          color: lighten($color-dark-blue, 20%);
+          border-bottom-color: lighten($color-dark-blue, 20%);
+        }
+      }
+    }
+  }
+  
+  // Responsive
+  @include bp-down(lg) {
+    padding: $space-12 0;
+    @include section-diagonal-padding-bottom($space-12, $space-12);
+    overflow-x: auto; // ✅ Sur mobile : scroll horizontal activé
+    
+    &__header {
+      margin-bottom: $space-8;
+    }
+    
+    &__title {
+      font-size: clamp($font-size-xl, 1.25vw, $font-size-2xl);
+    }
+    
+    &__carousel {
+      gap: $space-4;
+      padding-bottom: $space-4;
+      min-height: unset;
+      align-items: center;
+    }
+
+    &__card {
+      min-width: 240px;
+      width: 240px;
+      padding: $space-6;
+
+      &:nth-child(odd),
+      &:nth-child(even) {
+        align-self: auto;
+      }
+    }
+  }
+}

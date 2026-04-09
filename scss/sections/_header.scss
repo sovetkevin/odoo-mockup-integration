@@ -1,0 +1,96 @@
+// Header styles
+.header {
+    background: $color-brand-primary;
+
+    &__navbar {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(
+          calc(#{map-get($container-max-widths, xxl)} + #{$space-2} * 2),
+          100%
+        );
+        height: 1px;
+        pointer-events: none;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba($color-white, $separator-fade-white-peak) 50%,
+          transparent 100%
+        );
+      }
+    }
+    
+    &__logo-img {
+      height: 32px;
+      width: auto;
+    }
+    
+    &__nav {
+        gap: $space-4;
+      &-link {
+        color: $color-white;
+        font-weight: $font-weight-medium;
+        font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+        transition: $transition-color;
+       
+        
+        &:hover {
+          color: rgba($color-white, 0.8);
+        }
+      }
+    }
+    
+    &__cta {
+      // Lien "Sign in"
+      &-link {
+        color: $color-white;
+        text-decoration: none;
+        font-weight: $font-weight-medium;
+        padding: $space-3 $space-4;
+        display: inline-flex;
+        align-items: center;
+        transition: $transition-opacity;
+        
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+      
+      // Bouton "Buy now"
+      &-btn {
+        // Override btn-primary pour le Header : bouton blanc
+        background: $color-white;
+        border-color: $color-white;
+        color: $color-dark-blue;
+        padding: $space-3 $space-6;
+        
+        &:hover,
+        &:focus {
+          background: darken($color-white, 12%);
+          border-color: darken($color-white, 12%);
+          color: $color-dark-blue;
+        }
+      }
+    }
+    
+    // Mobile : CTA passe dans le collapse
+    @include bp-down(lg) {
+      &__cta {
+        flex-direction: column;
+        width: 100%;
+        margin-top: $space-4;
+        
+        &-link,
+        &-btn {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+    }
+  }

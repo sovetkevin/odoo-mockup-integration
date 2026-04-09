@@ -1,0 +1,59 @@
+// Pile Bootstrap complète (non modulaire) — ordre attendu par la doc officielle.
+//
+// Les surcharges vivent dans `foundation/_variables.scss`, importé avant ce fichier.
+// Bootstrap déclare ses variables avec `!default` : toute variable déjà définie y est donc
+// respectée lors de `@import 'bootstrap/scss/variables'`.
+//
+// Étapes effectives ici :
+// 1. Fonctions Bootstrap
+// 2. Variables Bootstrap (défauts + nos surcharges déjà en mémoire Sass)
+// 3. Variables dark Bootstrap
+// 4. Fusion `$theme-colors` avec `$custom-colors` (avant `maps` pour les utilitaires)
+// 5. Maps, mixins, utilitaires
+// 6. Composants et API utilitaires
+@import 'bootstrap/scss/mixins/banner';
+@include bsBanner('');
+
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/variables-dark';
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/utilities';
+
+@import 'bootstrap/scss/root';
+@import 'bootstrap/scss/reboot';
+@import 'bootstrap/scss/type';
+@import 'bootstrap/scss/images';
+@import 'bootstrap/scss/containers';
+@import 'bootstrap/scss/grid';
+@import 'bootstrap/scss/tables';
+@import 'bootstrap/scss/forms';
+@import 'bootstrap/scss/buttons';
+@import 'bootstrap/scss/transitions';
+@import 'bootstrap/scss/dropdown';
+@import 'bootstrap/scss/button-group';
+@import 'bootstrap/scss/nav';
+@import 'bootstrap/scss/navbar';
+@import 'bootstrap/scss/card';
+@import 'bootstrap/scss/accordion';
+@import 'bootstrap/scss/breadcrumb';
+@import 'bootstrap/scss/pagination';
+@import 'bootstrap/scss/badge';
+@import 'bootstrap/scss/alert';
+@import 'bootstrap/scss/progress';
+@import 'bootstrap/scss/list-group';
+@import 'bootstrap/scss/close';
+@import 'bootstrap/scss/toasts';
+@import 'bootstrap/scss/modal';
+@import 'bootstrap/scss/tooltip';
+@import 'bootstrap/scss/popover';
+@import 'bootstrap/scss/carousel';
+@import 'bootstrap/scss/spinners';
+@import 'bootstrap/scss/offcanvas';
+@import 'bootstrap/scss/placeholders';
+@import 'bootstrap/scss/helpers';
+@import 'bootstrap/scss/utilities/api';

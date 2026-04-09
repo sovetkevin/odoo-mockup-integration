@@ -1,0 +1,17 @@
+// Badges — classes Bootstrap (mixins : `foundation/_mixins.scss`)
+
+.badge {
+  @include el-badge-shell;
+}
+
+.badge.bg-primary {
+  @include el-badge-tone($color-brand-primary);
+}
+
+.badge.bg-success {
+  @include el-badge-tone($color-accent-green);
+}
+
+.badge.bg-warning {
+  @include el-badge-tone($color-accent-yellow);
+}

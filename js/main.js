@@ -1,3 +1,5 @@
+import '../scss/main.scss';
+
 console.log('Project initialized');
 
 // Video preview play/pause

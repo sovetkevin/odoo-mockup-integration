@@ -117,6 +117,7 @@ $accordion-icon-transform: none;
 $accordion-button-icon-dark: none;
 $accordion-button-active-icon-dark: none;
 $accordion-border-radius: $radius-base;
+$accordion-border-color: $color-neutral-100;
 // `$accordion-inner-border-radius` reste au défaut Bootstrap : il est recalculé après coup
 // à partir de `$accordion-border-radius` et `$accordion-border-width` lors de l’import des variables BS.
 // FAQ / cartes : fond neutre ouvert, texte lisible (tokens, pas les subtle Bootstrap par défaut).

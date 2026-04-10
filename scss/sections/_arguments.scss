@@ -84,9 +84,11 @@
     flex-wrap: wrap;
     
     &__btn {
+      background: $color-black;
       gap: $space-4;
       text-decoration: none;
       color: $color-white;
+      padding: $space-2 $space-6;
       
       &:hover {
         background: lighten($color-black, 20%);

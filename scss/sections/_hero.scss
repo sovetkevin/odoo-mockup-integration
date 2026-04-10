@@ -1,5 +1,9 @@
 // Hero section styles
 .hero {
+    &__row {
+      align-items: center;
+    }
+
     background: $color-brand-primary;
     padding: calc(#{$space-16} + var(--header-height, 0px)) 0 $space-16;
     @include section-diagonal-padding-bottom($space-16);
@@ -31,6 +35,10 @@
         margin-bottom: $space-16;
         display: inline-flex;
         align-items: center;
+
+        i {
+          margin-left: $space-2;
+        }
         
         &:hover,
         &:focus {
@@ -238,6 +246,7 @@
         
         i {
           font-size: $font-size-sm;
+          margin-left: $space-1;
         }
       }
     }

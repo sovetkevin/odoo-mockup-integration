@@ -108,6 +108,10 @@
     
     &-btn {
       color: $color-white;
+
+      i {
+        margin-left: $space-2;
+      }
     }
     
     &-link {

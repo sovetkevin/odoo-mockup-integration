@@ -91,6 +91,8 @@
     
     &__nav {
         gap: $space-4;
+        flex-grow: 1;
+        justify-content: center;
       &-link {
         color: $color-white;
         font-weight: $font-weight-medium;
@@ -105,6 +107,10 @@
     }
     
     &__cta {
+      display: flex;
+      gap: $space-4;
+      margin-left: auto;
+
       // Lien "Sign in"
       &-link {
         color: $color-white;
@@ -123,10 +129,16 @@
       // Bouton "Buy now"
       &-btn {
         // Override btn-primary pour le Header : bouton blanc
+        display: inline-flex;
+        align-items: center;
         background: $color-white;
         border-color: $color-white;
         color: $color-dark-blue;
         padding: $space-3 $space-6;
+
+        i {
+          margin-right: $space-2;
+        }
         
         &:hover,
         &:focus {

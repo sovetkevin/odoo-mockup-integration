@@ -37,6 +37,10 @@
   &__cta {
     flex-shrink: 0;
     color: $color-dark-blue;
+
+    i {
+      margin-left: $space-2;
+    }
     
     &:hover {
       color: $color-dark-blue;

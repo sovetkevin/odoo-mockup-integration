@@ -3,6 +3,10 @@
 
 .section {
     padding: $space-16 0;
+
+    .row {
+      align-items: center;
+    }
     
     &__img {
       width: 100%;
@@ -22,6 +26,10 @@
       font-size: clamp($font-size-md, 0.45vw, $font-size-lg);
       margin-bottom: $space-10;
       line-height: $line-height-relaxed;
+    }
+
+    .badge {
+      margin-bottom: $space-6;
     }
     
     // Responsive mobile : image toujours en haut

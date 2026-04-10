@@ -1,7 +1,7 @@
 // Hero section styles
 .hero {
     background: $color-brand-primary;
-    padding: $space-16 0;
+    padding: calc(#{$space-16} + var(--header-height, 0px)) 0 $space-16;
     @include section-diagonal-padding-bottom($space-16);
     @include section-diagonal-bottom-mirror-v;
     overflow: hidden;
@@ -244,7 +244,7 @@
     
     // Responsive
     @include bp-down(lg) {
-      padding: $space-12 0;
+      padding: calc(#{$space-12} + var(--header-height, 0px)) 0 $space-12;
       @include section-diagonal-padding-bottom($space-12, $space-12);
       
       &__title {

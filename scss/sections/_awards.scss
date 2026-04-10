@@ -7,7 +7,7 @@
   background: $color-surface-awards;
   padding: $space-32 0;
   @include section-diagonal-padding-bottom($space-32);
-  @include section-diagonal-bottom;
+  @include section-diagonal-bottom-mirror-v;
   overflow-x: hidden; // ✅ Coupe le débordement horizontal ici
   
   &__header {

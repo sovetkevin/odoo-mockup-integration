@@ -41,7 +41,7 @@
 // Sections : bord bas ou haut incliné (pour le fond)
 // =============================================================================
 
-/// Miroir horizontal (symétrie / échange gauche–droite sur le bord incliné).
+/// Coupe basse : coin bas-**gauche** relevé (bord incliné monte vers la gauche).
 @mixin section-diagonal-bottom($angle: $section-diagonal-angle) {
   position: relative;
   clip-path: polygon(
@@ -49,6 +49,17 @@
     100% 0,
     100% 100%,
     0 calc(100% - 100vw * tan(#{$angle}))
+  );
+}
+
+/// Même angle ; **miroir vertical** (symétrie gauche–droite) : coin bas-**droit** relevé — Hero & Awards.
+@mixin section-diagonal-bottom-mirror-v($angle: $section-diagonal-angle) {
+  position: relative;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 100vw * tan(#{$angle})),
+    0 100%
   );
 }
 

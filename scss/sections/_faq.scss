@@ -23,6 +23,8 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: $space-8 $space-10;
+    // Évite que la carte en colonne voisine s’étire sur la hauteur de la ligne quand l’autre s’ouvre
+    align-items: start;
     
     @include bp-down(lg) {
       grid-template-columns: 1fr;
@@ -53,13 +55,13 @@
         display: flex;
         align-items: center;
         font-size: clamp($font-size-lg, 0.45vw, $font-size-lg);
-        gap: $space-3;
-        order: 1; // ✅ Contenu (icône + texte) en premier
+        gap: $space-4;
+        order: 1;
         flex: 1;
         
         i {
-          font-size: clamp($font-size-lg, 0.6vw, $font-size-xl);
-          color: $color-brand-primary;
+          font-size: clamp($font-size-md, 0.6vw, $font-size-lg);
+          color:  $color-text-muted;
           flex-shrink: 0;
         }
       }

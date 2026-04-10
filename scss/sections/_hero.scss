@@ -3,7 +3,7 @@
     background: $color-brand-primary;
     padding: $space-16 0;
     @include section-diagonal-padding-bottom($space-16);
-    @include section-diagonal-bottom;
+    @include section-diagonal-bottom-mirror-v;
     overflow: hidden;
     
     &__title {
@@ -58,11 +58,7 @@
         padding: 0;
         margin: 0;
         flex-wrap: wrap;
-      }
-      
-      &-item {
-        // Container logo
-      }
+      }  
       
       &-logo {
         height: 30px;

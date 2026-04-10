@@ -64,6 +64,7 @@
     
     &__text {
       font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+      font-weight: $font-weight-semibold;
       color: $color-accent-green;
     }
   }

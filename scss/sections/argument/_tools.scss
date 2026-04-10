@@ -137,8 +137,8 @@
       font-size: clamp($font-size-sm, 0.22vw, 0.875rem);
     }
     
-    // Bootstrap progress est déjà stylisé via les variables
-    // Pas besoin de CSS supplémentaire ici
+    // Bootstrap progress est deja stylise via les variables
+    // Pas besoin de CSS supplementaire ici
     
     @include bp-down(lg) {
       margin-bottom: $space-4;

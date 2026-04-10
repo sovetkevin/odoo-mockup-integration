@@ -88,7 +88,7 @@
       }
       
       &-title {
-        font-size: $font-size-lg;
+        font-size: clamp($font-size-lg, 0.6vw, $font-size-xl);
         font-weight: $font-weight-semibold;
         color: $color-text-primary;
         margin: 0;
@@ -150,7 +150,7 @@
       
       &-label {
         display: block;
-        font-size: $font-size-xs;
+        font-size: clamp($font-size-xs, 0.2vw, 0.75rem);
         text-transform: uppercase;
         letter-spacing: $letter-spacing-wide;
         opacity: 0.7;
@@ -158,7 +158,7 @@
       }
       
       &-digits {
-        font-size: calc($font-size-2xl - 0.2rem);
+        font-size: clamp($font-size-xl, 1.25vw, $font-size-2xl);
         font-weight: $font-weight-medium;
         letter-spacing: $letter-spacing-wider;
         margin: 0;
@@ -175,7 +175,7 @@
       }
       
       &-value {
-        font-size: $font-size-md;
+        font-size: clamp($font-size-md, 0.45vw, $font-size-lg);
         font-weight: $font-weight-medium;
         margin: 0;
       }
@@ -199,20 +199,20 @@
       }
       
       &-title {
-        font-size: $font-size-base;
+        font-size: clamp($font-size-body, 0.45vw, $font-size-md);
         font-weight: $font-weight-semibold;
         color: $color-text-primary;
         margin: 0 0 $space-1;
       }
       
       &-status {
-        font-size: $font-size-sm;
+        font-size: clamp($font-size-sm, 0.22vw, 0.875rem);
         color: $color-text-muted;
         margin: 0;
       }
       
       &-amount {
-        font-size: $font-size-base;
+        font-size: clamp($font-size-body, 0.45vw, $font-size-md);
         font-weight: $font-weight-semibold;
         color: $color-text-primary;
         margin: 0;
@@ -224,7 +224,7 @@
         display: inline-flex;
         align-items: center;
         color: $color-brand-primary;
-        font-size: $font-size-sm;
+        font-size: clamp($font-size-sm, 0.22vw, 0.875rem);
         font-weight: $font-weight-medium;
         text-decoration: none;
         border-bottom: 1px dashed $color-brand-primary;
@@ -264,7 +264,7 @@
         }
         
         &-title {
-          font-size: $font-size-base;
+          font-size: clamp($font-size-body, 0.45vw, $font-size-md);
         }
       }
       
@@ -277,7 +277,7 @@
         }
         
         &-digits {
-          font-size: $font-size-lg;
+          font-size: clamp($font-size-lg, 0.6vw, $font-size-xl);
         }
         
         &-bottom {
@@ -285,7 +285,7 @@
         }
         
         &-value {
-          font-size: $font-size-sm;
+          font-size: clamp($font-size-sm, 0.22vw, 0.875rem);
         }
       }
       
@@ -296,11 +296,11 @@
         
         &-title,
         &-amount {
-          font-size: $font-size-sm;
+          font-size: clamp($font-size-sm, 0.22vw, 0.875rem);
         }
         
         &-status {
-          font-size: $font-size-xs;
+          font-size: clamp($font-size-xs, 0.2vw, 0.75rem);
         }
       }
       

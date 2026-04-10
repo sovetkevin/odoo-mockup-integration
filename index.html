@@ -30,14 +30,16 @@
           
           <!-- Toggler mobile -->
           <button 
-            class="navbar-toggler header__toggler" 
+            class="navbar-toggler header__toggler collapsed" 
             type="button" 
             data-bs-toggle="collapse" 
             data-bs-target="#navbarContent"
             aria-controls="navbarContent" 
             aria-expanded="false" 
             aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="header__toggler-line"></span>
+            <span class="header__toggler-line"></span>
+            <span class="header__toggler-line"></span>
           </button>
           
           <!-- Menu collapsible -->
@@ -62,7 +64,7 @@
             </ul>
             
             <!-- CTA droite -->
-            <div class="d-flex gap-6 ms-auto header__cta">
+            <div class="d-flex gap-4 ms-auto header__cta">
               <a href="#signin" class="header__cta-link">Sign in</a>
               <a href="#buy" class="btn btn-primary header__cta-btn">
                 <i class="bi bi-cart me-2"></i>Buy now

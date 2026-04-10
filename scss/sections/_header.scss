@@ -44,6 +44,50 @@
       height: 32px;
       width: auto;
     }
+
+    &__toggler {
+      border: 0;
+      box-shadow: none;
+      padding: $space-2;
+      width: 44px;
+      height: 44px;
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+
+      &:focus,
+      &:focus-visible {
+        box-shadow: none;
+      }
+
+      &-line {
+        display: block;
+        width: 24px;
+        height: 2px;
+        margin-inline: auto;
+        border-radius: $radius-full;
+        background: $color-white;
+        transform-origin: center;
+        transition:
+          transform $duration-base $ease-out,
+          opacity $duration-fast $ease-out;
+      }
+
+      &:not(.collapsed) {
+        .header__toggler-line:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+        }
+
+        .header__toggler-line:nth-child(2) {
+          opacity: 0;
+        }
+
+        .header__toggler-line:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+        }
+      }
+    }
     
     &__nav {
         gap: $space-4;
@@ -95,6 +139,41 @@
     
     // Mobile : CTA passe dans le collapse
     @include bp-down(lg) {
+      &__navbar {
+        .navbar-collapse {
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          right: auto;
+          transform: translateX(-50%);
+          width: 100vw;
+          z-index: 20;
+          margin-top: 0;
+          padding: $space-6;
+          border-radius: 0 0 $radius-lg $radius-lg;
+          border: 1px solid rgba($color-white, 0.2);
+          border-top: 0;
+          background: rgba($color-brand-primary, 0.95);
+          box-shadow: $shadow-lg;
+          backdrop-filter: blur(8px);
+        }
+      }
+
+      &__nav {
+        gap: $space-2;
+        margin-bottom: $space-2;
+
+        &-link {
+          border-radius: $radius-base;
+          padding: $space-3 $space-4;
+
+          &:hover {
+            color: $color-white;
+            background: rgba($color-white, 0.1);
+          }
+        }
+      }
+
       &__cta {
         flex-direction: column;
         width: 100%;
@@ -104,6 +183,11 @@
         &-btn {
           width: 100%;
           justify-content: center;
+        }
+
+        &-link {
+          border: 1px solid $color-white;
+          border-radius: $radius-base;
         }
       }
     }

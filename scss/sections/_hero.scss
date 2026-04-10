@@ -75,11 +75,9 @@
     
     &__card {
       background: $color-white;
-      border: none;
       border-radius: $radius-xl;
       border-bottom-right-radius: calc($radius-xl * 4);
       padding: $space-10 $space-8 $space-12 $space-8;
-      box-shadow: $shadow-2xl;
       
       // Header : Titre + Bouton
       &-header {

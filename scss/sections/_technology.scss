@@ -1,1 +1,225 @@
-// Argument Technology — surcharge / BEM réservé (.technology, etc.)
+// Technology section — Mosaic grid with 4 cards
+.technology-preview {
+    display: flex;
+    gap: $space-6;
+    justify-content: center;
+    align-items: stretch;
+
+    .card {
+        transition: transform $duration-base $ease-out,
+                    box-shadow $duration-base $ease-out;
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow: $shadow-2xl;
+            cursor: pointer;
+          }
+    }
+
+    // Cas spécifique Technology : la carte awards occupe toute la largeur de sa colonne
+    .awards__card {
+      width: 100%;
+      min-width: 0;
+      align-self: stretch;
+    }
+
+    &__col {
+      flex: 1 1 calc(50% - #{$space-6} / 2);
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: $space-6;
+    }
+
+    &__col--left {
+      justify-content: center;
+    }
+
+    @include bp-down(md) {
+      flex-direction: column;
+
+      &__col {
+        flex-basis: 100%;
+      }
+
+      &__col--left {
+        justify-content: flex-start;
+      }
+    }
+  }
+  
+  // User Card
+  .user-card {
+    padding: 0;
+    overflow: hidden;
+    
+    &__img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+    }
+    
+    &__footer {
+      display: flex;
+      align-items: center;
+      padding: $space-6;
+      gap: $space-5;
+    }
+    
+    &__avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: $color-accent-yellow;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: $font-size-md;
+      font-weight: $font-weight-semibold;
+      color: $color-white;
+      flex-shrink: 0;
+    }
+    
+    &__name {
+      font-size: $font-size-body;
+      font-weight: $font-weight-semibold;
+      color: $color-text-primary;
+      margin: 0;
+      flex: 1;
+    }
+    
+    &__like {
+      background: none;
+      border: none;
+      color: $color-text-muted;
+      font-size: $font-size-md;
+      cursor: pointer;
+      padding: 0;
+      transition: $transition-color;
+      
+      &:hover {
+        color: $color-accent-yellow;
+        transform: scale(1.1);
+      }
+    }
+  }
+  
+  // Component Card
+  .component-card {
+    padding: $space-6;
+    
+    &__content {
+      display: flex;
+      align-items: center;
+      gap: $space-4;
+    }
+    
+    &__icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: $color-accent-green;
+      color: $color-white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      
+      i {
+        font-size: $font-size-2xl;
+      }
+    }
+    
+    &__text {
+      flex: 1;
+    }
+    
+    &__title {
+      font-size: $font-size-md;
+      font-weight: $font-weight-semibold;
+      color: $color-text-primary;
+      margin: 0 0 $space-1;
+    }
+    
+    &__subtitle {
+      font-size: $font-size-body;
+      color: $color-text-muted;
+    }
+  }
+  
+  // UI Kit Card
+  .ui-kit-card {
+    padding: $space-10;
+    
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: $space-4;
+      padding-bottom: $space-4;
+    }
+    
+    &__logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    
+    &__title {
+      font-size: $font-size-md;
+      font-weight: $font-weight-semibold;
+      color: $color-text-primary;
+      margin: 0;
+    }
+    
+    &__avatars {
+      display: flex;
+      justify-content: center;
+      margin: $space-3 0;
+    }
+    
+    &__avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid $color-white;
+      object-fit: cover;
+      
+      &:not(:first-child) {
+        margin-left: -8px; // Superposition
+      }
+    }
+    
+    &__actions {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      padding-top: $space-4;
+      margin: 0 auto;
+      border-top: 1px solid $color-border-light;
+      width: 60%;
+    }
+    
+    &__action {
+      background: none;
+      border: none;
+      color: $color-text-muted;
+      font-size: $font-size-md;
+      cursor: pointer;
+      padding: 0;
+      transition: $transition-color;
+      
+      &:hover {
+        color: $color-brand-primary;
+        transform: scale(1.1);
+      }
+    }
+  }

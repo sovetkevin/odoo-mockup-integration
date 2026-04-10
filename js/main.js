@@ -13,11 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isPlaying) {
         // Pause action
         this.dataset.action = 'play';
-        this.innerHTML = `Play video <i class="bi bi-play ms-2"></i>`;
+        this.innerHTML = `Play video <i class="bi bi-play"></i>`;
       } else {
         // Play action
         this.dataset.action = 'pause';
-        this.innerHTML = `Pause video <i class="bi bi-pause ms-2"></i>`;
+        this.innerHTML = `Pause video <i class="bi bi-pause"></i>`;
       }
       
       // TODO: Implémenter la vraie vidéo avec <video> tag plus tard

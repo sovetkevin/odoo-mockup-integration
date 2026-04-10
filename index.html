@@ -318,10 +318,83 @@
         <div class="container">
           <div class="row align-items-center">
             
-            <!-- Image gauche -->
-            <div class="col-lg-6 order-lg-1">
-              <img src="assets/images/technology-preview.png" alt="Technology preview" class="section__img">
+           <!-- Colonne gauche -->
+          <div class="col-lg-6 order-lg-1">
+            <div class="technology-preview">
+              <div class="technology-preview__col technology-preview__col--left">
+                <!-- Bloc 1 : User card -->
+                <div class="user-card card">
+                  <img src="assets/images/person_03.jpg" alt="User" class="user-card__img">
+                  <div class="user-card__footer">
+                    <div class="user-card__avatar">JH</div>
+                    <p class="user-card__name">Jimmy Hendrix</p>
+                    <button class="user-card__like" aria-label="Like">
+                      <i class="bi bi-heart"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Bloc 2 : Component card -->
+                <div class="component-card card">
+                  <div class="component-card__content">
+                    <div class="component-card__icon">
+                      <i class="bi bi-check"></i>
+                    </div>
+                    <div class="component-card__text">
+                      <p class="component-card__title">300+ components</p>
+                      <span class="component-card__subtitle">Built to be customized.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="technology-preview__col technology-preview__col--right">
+               
+
+                <!-- Bloc 3 : Rating card (réutilise awards card) -->
+                <div class="awards__card awards__card--rating card">
+                  <img src="assets/images/logo-airbnb.svg" alt="Airbnb" class="awards__card-logo">
+                  <div class="awards__card-content card-body">
+                    <div class="awards__card-rating">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star"></i>
+                    </div>
+                    <p class="awards__card-score">4.95 out of 5 stars</p>
+                    <span class="awards__card-reviews">from 23 reviews</span>
+                  </div>
+                </div>
+
+                <!-- Bloc 4 : UI Kit card -->
+                <div class="ui-kit-card card">
+                  <div class="ui-kit-card__content">
+                    <div class="ui-kit-card__logo">
+                      <img src="assets/images/logo-company_01.png" alt="Company">
+                    </div>
+                    <p class="ui-kit-card__title">Website UI Kit</p>
+                    <div class="ui-kit-card__avatars">
+                      <img src="assets/images/person_01.jpg" alt="Person 1" class="ui-kit-card__avatar">
+                      <img src="assets/images/person_02.jpg" alt="Person 2" class="ui-kit-card__avatar">
+                      <img src="assets/images/person_03.jpg" alt="Person 3" class="ui-kit-card__avatar">
+                    </div>
+                  </div>
+                  <div class="ui-kit-card__actions">
+                    <button class="ui-kit-card__action" aria-label="Favorite">
+                      <i class="bi bi-heart"></i>
+                    </button>
+                    <button class="ui-kit-card__action" aria-label="Share">
+                      <i class="bi bi-share"></i>
+                    </button>
+                    <button class="ui-kit-card__action" aria-label="More">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
             
             <!-- Texte droite -->
             <div class="col-lg-5 offset-lg-1 order-lg-2">

@@ -23,7 +23,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: $space-8 $space-10;
-    // Évite que la carte en colonne voisine s’étire sur la hauteur de la ligne quand l’autre s’ouvre
     align-items: start;
     
     @include bp-down(lg) {

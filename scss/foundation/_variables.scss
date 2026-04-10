@@ -80,6 +80,7 @@ $btn-transition: $transition-all;
 
 // === CARDS BOOTSTRAP ===
 $card-border-radius: $radius-lg;
+$card-border-color: $color-neutral-200;
 $card-box-shadow: $shadow-sm;
 
 // === NAVBAR BOOTSTRAP ===
@@ -129,3 +130,15 @@ $accordion-button-padding-y: $space-6;
 $accordion-button-padding-x: $space-8;
 // Focus : pas d’ombre portée imposée par Bootstrap ; la section peut affiner bordure / outline si besoin.
 $accordion-button-focus-box-shadow: none;
+
+// === PROGRESS BAR ===
+// Hauteur 2px au lieu de 1rem Bootstrap par défaut
+$progress-height: 3px;
+// Fond neutral-200 pour la barre non progressée
+$progress-bg: $color-neutral-200;
+// Barre de progression jaune
+$progress-bar-bg: $color-accent-yellow;
+// Radius complet pour arrondir
+$progress-border-radius: $radius-full;
+// Pas de transition Bootstrap par défaut (on gère nous-mêmes si besoin)
+$progress-bar-transition: width $duration-base $ease-out;

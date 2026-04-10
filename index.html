@@ -113,11 +113,11 @@
             
             <!-- Colonne droite : card mockup -->
             <div class="col-lg-5 offset-lg-1">
-              <div class="hero__card">
+              <div class="hero__card card">
                 
                 <!-- Header : Titre + Bouton -->
                 <div class="hero__card-header">
-                  <h3 class="hero__card-title">Manage cards</h3>
+                  <h3 class="hero__card-title card-title">Manage cards</h3>
                   <a href="#" class="btn btn-sm btn-light hero__card-btn">Add new</a>
                 </div>
                 
@@ -127,7 +127,7 @@
                   <!-- Partie 1 : Logo + Badge Active -->
                   <div class="hero__bank-card-top">
                     <img src="assets/images/logo-mastercard.svg" alt="Mastercard" class="hero__bank-card-logo">
-                    <span class="hero__bank-card-badge">Active</span>
+                    <span class="badge bg-success hero__bank-card-badge">Active</span>
                   </div>
                   
                   <!-- Partie 2 : Card Number -->
@@ -191,14 +191,76 @@
         <div class="container">
           <div class="row align-items-center">
             
-            <!-- Image gauche -->
+            <!-- Bloc gauche -->
             <div class="col-lg-6 order-lg-1">
-              <img src="assets/images/tools-preview.png" alt="Tools preview" class="section__img">
+              <div class="tools-preview">
+                
+                <!-- Bloc 1 : Video container (60% width, top-right) -->
+                <div class="tools-preview__video">
+                  <img src="assets/images/img_01.jpg" alt="Video preview" class="video-preview__thumbnail">
+                  <button class="btn btn-light video-preview__btn video-preview__btn--top-right" data-action="play">
+                    Play video
+                    <i class="bi bi-play-fill ms-2"></i>
+                  </button>
+                </div>
+                
+                <!-- Bloc 2 : Progression card (bottom-left) -->
+                <div class="tools-preview__card card">
+                  <h3 class="tools-preview__title card-title">Awesome projects</h3>
+                  
+                  <div class="tools-preview__content">
+                    
+                    <!-- Progress item 1 -->
+                    <div class="progress-item">
+                      <div class="progress-item__header">
+                        <p class="progress-item__title">Create the new logo</p>
+                        <div class="progress-item__meta">
+                          <span class="progress-item__time">3:50</span>
+                          <i class="bi bi-chevron-right"></i>
+                        </div>
+                      </div>
+                      <div class="progress" role="progressbar" aria-label="Progress" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" style="width: 80%"></div>
+                      </div>
+                    </div>
+                    
+                    <!-- Progress item 2 -->
+                    <div class="progress-item">
+                      <div class="progress-item__header">
+                        <p class="progress-item__title">Set up the color palette</p>
+                        <div class="progress-item__meta">
+                          <span class="progress-item__time">4:00</span>
+                          <i class="bi bi-chevron-right"></i>
+                        </div>
+                      </div>
+                      <div class="progress" role="progressbar" aria-label="Progress" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" style="width: 80%"></div>
+                      </div>
+                    </div>
+                    
+                    <!-- Progress item 3 -->
+                    <div class="progress-item">
+                      <div class="progress-item__header">
+                        <p class="progress-item__title">Wireframe and prototype</p>
+                        <div class="progress-item__meta">
+                          <span class="progress-item__time">6:50</span>
+                          <i class="bi bi-chevron-right"></i>
+                        </div>
+                      </div>
+                      <div class="progress" role="progressbar" aria-label="Progress" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" style="width: 80%"></div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                
+              </div>
             </div>
-            
+                        
             <!-- Texte droite -->
             <div class="col-lg-5 offset-lg-1 order-lg-2">
-              <span class="badge bg-warning section__badge">Tools</span>
+              <span class="badge bg-warning mb-6">Tools</span>
               <h2 class="section__title">We build for designers and developers</h2>
               <p class="section__text">
                 Get components and examples, including tons of variables that will help you grow your business.
@@ -216,7 +278,7 @@
             
             <!-- Texte gauche -->
             <div class="col-lg-5 order-lg-1">
-              <span class="badge bg-success section__badge">Features</span>
+              <span class="badge bg-success mb-6">Features</span>
               <h2 class="section__title">
                 We create tools and apps for your business
               </h2>
@@ -240,7 +302,7 @@
             <div class="col-lg-6 offset-lg-1 order-lg-2">
               <div class="video-preview">
                 <img src="assets/images/video-thumbnail.jpg" alt="Video preview" class="video-preview__thumbnail">
-                <button class="video-preview__btn" data-action="play">
+                <button class="btn btn-light video-preview__btn" data-action="play">
                   Play video
                   <i class="bi bi-play-fill ms-2"></i>
                 </button>
@@ -263,7 +325,7 @@
             
             <!-- Texte droite -->
             <div class="col-lg-5 offset-lg-1 order-lg-2">
-              <span class="badge bg-primary section__badge">Technology</span>
+              <span class="badge bg-primary mb-6">Technology</span>
               <h2 class="section__title">We use the latest technologies on the market</h2>
               <p class="section__text">
                 Get components and examples, including tons of variables that will help you grow your business.
@@ -282,14 +344,14 @@
             
             <!-- Texte gauche -->
             <div class="col-lg-5 order-lg-1">
-              <span class="badge bg-warning section__badge">Easy to install</span>
+              <span class="badge bg-warning mb-6">Easy to install</span>
               <h2 class="section__title">Download, install and run.</h2>
               <p class="section__text">
                 Get components and examples, including tons of variables that will help you grow your business.
               </p>
               
               <div class="app-stores">
-                <a href="#" class="app-stores__btn">
+                <a href="#" class="btn btn-dark app-stores__btn">
                   <i class="bi bi-apple app-stores__icon"></i>
                   <div class="app-stores__text">
                     <span class="app-stores__label">Download on the</span>
@@ -297,7 +359,7 @@
                   </div>
                 </a>
                 
-                <a href="#" class="app-stores__btn">
+                <a href="#" class="btn btn-dark app-stores__btn">
                   <i class="bi bi-google-play app-stores__icon"></i>
                   <div class="app-stores__text">
                     <span class="app-stores__label">Download on the</span>
@@ -311,7 +373,7 @@
             <div class="col-lg-6 offset-lg-1 order-lg-2">
               <div class="video-preview">
                 <img src="assets/images/video-thumbnail-2.jpg" alt="Video preview" class="video-preview__thumbnail">
-                <button class="video-preview__btn" data-action="play">
+                <button class="btn btn-light video-preview__btn" data-action="play">
                   Play video
                   <i class="bi bi-play-fill ms-2"></i>
                 </button>
@@ -356,9 +418,9 @@
             <div class="awards__carousel">
               
               <!-- Card 1 : Rating Airbnb -->
-              <div class="awards__card awards__card--rating">
+              <div class="awards__card awards__card--rating card">
                 <img src="assets/images/logo-airbnb.svg" alt="Airbnb" class="awards__card-logo">
-                <div class="awards__card-content">
+                <div class="awards__card-content card-body">
                   <div class="awards__card-rating">
                     <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-fill"></i>
@@ -372,27 +434,27 @@
               </div>
               
               <!-- Card 2 : Desc Amazon -->
-              <div class="awards__card awards__card--desc">
+              <div class="awards__card awards__card--desc card">
                 <img src="assets/images/logo-amazon.svg" alt="Amazon" class="awards__card-logo">
-                <div class="awards__card-content">
+                <div class="awards__card-content card-body">
                   <p class="awards__card-text">They build modern looking websites easily using Tabs.</p>
                   <a href="#" class="awards__card-link">Learn more</a>
                 </div>
               </div>
               
               <!-- Card 3 : Desc Slack -->
-              <div class="awards__card awards__card--desc">
+              <div class="awards__card awards__card--desc card">
                 <img src="assets/images/logo-slack.svg" alt="Slack" class="awards__card-logo">
-                <div class="awards__card-content">
+                <div class="awards__card-content card-body">
                   <p class="awards__card-text">They build modern looking websites easily using Trello.</p>
                   <a href="#" class="awards__card-link">Learn more</a>
                 </div>
               </div>
               
               <!-- Card 4 : Rating Spotify -->
-              <div class="awards__card awards__card--rating">
+              <div class="awards__card awards__card--rating card">
                 <img src="assets/images/logo-spotify.svg" alt="Spotify" class="awards__card-logo">
-                <div class="awards__card-content">
+                <div class="awards__card-content card-body">
                   <div class="awards__card-rating">
                     <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-fill"></i>
@@ -406,9 +468,9 @@
               </div>
               
               <!-- Card 5 : Desc PayPal -->
-              <div class="awards__card awards__card--desc">
+              <div class="awards__card awards__card--desc card">
                 <img src="assets/images/logo-paypal.svg" alt="PayPal" class="awards__card-logo">
-                <div class="awards__card-content">
+                <div class="awards__card-content card-body">
                   <p class="awards__card-text">They build modern looking websites easily using Docker.</p>
                   <a href="#" class="awards__card-link">Learn more</a>
                 </div>
@@ -635,30 +697,30 @@
               
               <div class="col-lg-4">
                 <p class="footer__nav-title">Account</p>
-                <ul class="footer__nav-list">
-                  <li><a href="#" class="footer__nav-link">Profile</a></li>
-                  <li><a href="#" class="footer__nav-link">Settings</a></li>
-                  <li><a href="#" class="footer__nav-link">Billing</a></li>
-                  <li><a href="#" class="footer__nav-link">Notifications</a></li>
+                <ul class="footer__nav-list nav flex-column">
+                  <li class="nav-item"><a href="#" class="footer__nav-link nav-link p-0">Profile</a></li>
+                  <li class="nav-item"><a href="#" class="footer__nav-link nav-link p-0">Settings</a></li>
+                  <li class="nav-item"><a href="#" class="footer__nav-link nav-link p-0">Billing</a></li>
+                  <li class="nav-item"><a href="#" class="footer__nav-link nav-link p-0">Notifications</a></li>
                 </ul>
               </div>
               
               <div class="col-lg-4">
                 <p class="footer__nav-title">About</p>
-                <ul class="footer__nav-list">
-                  <li><a href="#" class="footer__nav-link">Services</a></li>
-                  <li><a href="#" class="footer__nav-link">Pricing</a></li>
-                  <li><a href="#" class="footer__nav-link">Contact</a></li>
-                  <li><a href="#" class="footer__nav-link">Careers</a></li>
+                <ul class="footer__nav-list nav flex-column">
+                  <li class="nav-item"><a href="#" class="footer__nav-link nav-link p-0">Services</a></li>
+                  <li class="nav-item"><a href="#" class="footer__nav-link nav-link p-0">Pricing</a></li>
+                  <li class="nav-item"><a href="#" class="footer__nav-link nav-link p-0">Contact</a></li>
+                  <li class="nav-item"><a href="#" class="footer__nav-link nav-link p-0">Careers</a></li>
                 </ul>
               </div>
               
               <div class="col-lg-4">
                 <p class="footer__nav-title">Company</p>
-                <ul class="footer__nav-list">
-                  <li><a href="#" class="footer__nav-link">Community</a></li>
-                  <li><a href="#" class="footer__nav-link">Help center</a></li>
-                  <li><a href="#" class="footer__nav-link">Support</a></li>
+                <ul class="footer__nav-list nav flex-column">
+                  <li class="nav-item"><a href="#" class="footer__nav-link nav-link p-0">Community</a></li>
+                  <li class="nav-item"><a href="#" class="footer__nav-link nav-link p-0">Help center</a></li>
+                  <li class="nav-item"><a href="#" class="footer__nav-link nav-link p-0">Support</a></li>
                 </ul>
               </div>
               
@@ -672,10 +734,10 @@
           <p class="footer__copyright">
             © <strong>Odoo</strong>. All rights reserved
           </p>
-          <nav class="footer__legal">
-            <a href="#" class="footer__legal-link">Terms</a>
-            <a href="#" class="footer__legal-link">Privacy</a>
-            <a href="#" class="footer__legal-link">Cookies</a>
+          <nav class="footer__legal nav">
+            <a href="#" class="footer__legal-link nav-link p-0">Terms</a>
+            <a href="#" class="footer__legal-link nav-link p-0">Privacy</a>
+            <a href="#" class="footer__legal-link nav-link p-0">Cookies</a>
           </nav>
         </div>
         

@@ -1,1 +1,152 @@
-// Argument Tools — surcharge / BEM réservé (.tools, etc.)
+// Tools section — Preview with video + progression card
+.tools-preview {
+    position: relative;
+    min-height: 500px;
+    
+    // Bloc 1 : Video container (60% width, top-right)
+    &__video {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60%;
+      border-radius: $radius-lg;
+      box-shadow: $shadow-lg;
+      overflow: hidden;
+      z-index: 2;
+      
+      .video-preview__thumbnail {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .video-preview__btn {
+        left: auto;
+        right: $space-4;
+      }
+    }
+    
+    // Bloc 2 : Progression card (bottom-left)
+    &__card {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 85%;
+      background: $color-white;
+      border-radius: $radius-lg;
+      padding: $space-10 $space-12;
+      box-shadow: $shadow-xl;
+      z-index: 1;
+    }
+    
+    &__title {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-semibold;
+      margin-bottom: $space-6;
+      color: $color-text-primary;
+    }
+    
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: $space-6;
+      margin-bottom: $space-4;
+    }
+
+    
+    
+    // Responsive
+    @include bp-down(lg) {
+      min-height: 400px;
+      
+      &__video {
+        width: 70%;
+        aspect-ratio: 4 / 3;
+      }
+      
+      &__card {
+        width: 90%;
+        padding: $space-6;
+      }
+      
+      &__title {
+        font-size: $font-size-lg;
+        margin-bottom: $space-4;
+      }
+      
+      &__content {
+        width: 90%;
+      }
+    }
+    
+    @include bp-down(md) {
+      position: static;
+      min-height: auto;
+      
+      &__video {
+        position: static;
+        width: 100%;
+        margin-bottom: $space-6;
+      }
+      
+      &__card {
+        position: static;
+        width: 100%;
+      }
+      
+      &__content {
+        width: 100%;
+      }
+    }
+  }
+  
+  // Progress items (header + Bootstrap progress)
+  .progress-item {
+    margin-bottom: $space-6;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: $space-2;
+    }
+    
+    &__title {
+      font-size: $font-size-base;
+      font-weight: $font-weight-medium;
+      color: $color-text-primary;
+      margin: 0;
+    }
+    
+    &__meta {
+      display: flex;
+      align-items: center;
+      gap: $space-2;
+      color: $color-text-muted;
+      font-size: $font-size-base;
+    }
+    
+    &__time {
+      font-variant-numeric: tabular-nums;
+    }
+    
+    i {
+      font-size: $font-size-sm;
+    }
+    
+    // Bootstrap progress est déjà stylisé via les variables
+    // Pas besoin de CSS supplémentaire ici
+    
+    @include bp-down(lg) {
+      margin-bottom: $space-4;
+      
+      &__title,
+      &__meta {
+        font-size: $font-size-sm;
+      }
+    }
+  }

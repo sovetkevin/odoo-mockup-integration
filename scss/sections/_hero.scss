@@ -75,6 +75,7 @@
     
     &__card {
       background: $color-white;
+      border: none;
       border-radius: $radius-xl;
       border-bottom-right-radius: calc($radius-xl * 4);
       padding: $space-10 $space-8 $space-12 $space-8;
@@ -96,7 +97,7 @@
       }
       
       &-btn {
-        border: 1px solid $color-neutral-200;
+        border: 1px solid $color-neutral-400;
         padding: $space-2 $space-5;
       }
     }
@@ -142,12 +143,6 @@
       }
       
       &-badge {
-        background: $color-accent-green;
-        color: $color-white;
-        font-size: $font-size-xs;
-        font-weight: $font-weight-medium;
-        padding: $space-1 $space-3;
-        border-radius: $radius-xs; // Plus petit que badge normal
         letter-spacing: $letter-spacing-wide;
       }
       

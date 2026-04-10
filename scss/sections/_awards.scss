@@ -40,6 +40,7 @@
   
   &__card {
     background: $color-white;
+    border: none;
     border-radius: $radius-lg;
     padding: $space-12 $space-12;
     box-shadow: $shadow-lg;
@@ -84,6 +85,7 @@
       align-items: center;
       width: 100%;
       text-align: center;
+      padding: 0;
     }
     
     // Type Rating

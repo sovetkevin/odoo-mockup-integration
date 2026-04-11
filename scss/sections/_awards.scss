@@ -27,7 +27,7 @@
   }
   
   &__carousel-wrapper {
-    overflow: visible; // ✅ Permet au hover de monter sans être coupé
+    overflow: visible; 
     position: relative;
   }
   
@@ -129,18 +129,8 @@
       }
       
       .awards__card-link {
-        color: $color-dark-blue;
-        text-decoration: none;
-        border-bottom: 3px solid $color-dark-blue;
-        padding-bottom: $space-1;
-        font-weight: $font-weight-medium;
-        transition: $transition-color;
+        @include link-underline($color-dark-blue, lighten($color-dark-blue, 20%));
         white-space: nowrap;
-        
-        &:hover {
-          color: lighten($color-dark-blue, 20%);
-          border-bottom-color: lighten($color-dark-blue, 20%);
-        }
       }
     }
   }
@@ -148,32 +138,54 @@
   // Responsive
   @include bp-down(lg) {
     padding: $space-12 0;
-    @include section-diagonal-padding-bottom($space-12, $space-12);
-    overflow-x: auto; // ✅ Sur mobile : scroll horizontal activé
-    
+    @include section-diagonal-padding-bottom($space-12, $space-4);
+    overflow-x: hidden;
+
+    // Carrousel horizontal : scroll interne, barre masquée.
+    // Padding : overflow-x crée un scrollport qui rogne aussi les box-shadow — on réserve de la place pour hover + ombre.
+    &__carousel-wrapper {
+      overflow-x: auto;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding: 0;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
     &__header {
       margin-bottom: $space-8;
     }
     
     &__title {
-      font-size: clamp($font-size-xl, 1.25vw, $font-size-2xl);
+      font-size: clamp($font-size-lg, 1.75vw, $font-size-xl);
     }
     
     &__carousel {
+      flex-direction: row;
+      flex-wrap: nowrap;
       gap: $space-4;
-      padding-bottom: $space-4;
+      padding: $space-2 0 $space-6;
       min-height: unset;
-      align-items: center;
-    }
+      align-items: stretch;
 
-    &__card {
-      min-width: 240px;
-      width: 240px;
-      padding: $space-6;
+      > .awards__card {
+        min-width: 240px;
+        width: 240px;
+        flex-shrink: 0;
+        padding: $space-10 $space-8;
 
-      &:nth-child(odd),
-      &:nth-child(even) {
-        align-self: auto;
+        &:nth-child(odd),
+        &:nth-child(even) {
+          align-self: stretch;
+        }
+      }
+
+      > .awards__card .awards__card-logo {
+        transform: none;
       }
     }
   }

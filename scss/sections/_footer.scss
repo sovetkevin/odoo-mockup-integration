@@ -66,6 +66,12 @@
     margin-bottom: $space-6;
   }
   
+  &__nav-row {
+    @include bp-down(sm) {
+      row-gap: $space-6;
+    }
+  }
+
   &__social {
     display: flex;
     gap: $space-4;
@@ -192,14 +198,21 @@
     &__content {
       margin-bottom: $space-8;
     }
-    
+
+    &__social {
+      margin-bottom: $space-8;
+    }
+  }
+
+  // Très petit écran uniquement : copyright + liens légaux empilés (au-dessus de sm : une ligne)
+  @include bp-down(sm) {
     &__bottom {
       flex-direction: column;
       gap: $space-4;
       align-items: flex-start;
       padding-top: $space-6;
     }
-    
+
     &__legal {
       gap: $space-4;
     }

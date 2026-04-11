@@ -1,0 +1,34 @@
+// Surcharges globales Bootstrap : boutons, badges, cartes (après `bootstrap-stack`)
+
+.btn {
+  @include el-button-layout;
+}
+
+.btn-primary {
+  @include el-button-solid($color-brand-primary);
+}
+
+.btn-light {
+  @include el-button-solid($color-white, darken($color-white, 12%));
+}
+
+.badge {
+  @include el-badge-shell;
+}
+
+.badge.bg-primary {
+  @include el-badge-tone($color-brand-primary);
+}
+
+.badge.bg-success {
+  @include el-badge-tone($color-accent-green);
+}
+
+.badge.bg-warning {
+  @include el-badge-tone($color-accent-yellow);
+}
+
+.card {
+  border-color: $card-border-color;
+  box-shadow: $card-box-shadow;
+}

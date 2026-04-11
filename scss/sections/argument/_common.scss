@@ -1,164 +1,67 @@
-// Argument : styles partages (Tools, Features, Technology, Install)
-// Fichiers dedies : `_tools.scss`, `_features.scss`, `_technology.scss`, `_install.scss`
+// Argument : `.section`, espacements colonnes, bloc `.video-preview` (Features / Install — mixins `el-video-preview-*`)
 
 .section {
-    padding: $space-16 0;
+  padding: $space-16 0;
 
-    .row {
-      align-items: center;
-    }
-    
-    &__img {
-      width: 100%;
-      height: auto;
-      border-radius: $radius-lg;
-    }
-    
-    &__title {
-      font-size: clamp($font-size-xl, 3vw, $font-size-2xl);
-      font-weight: $font-weight-semibold;
-      margin-bottom: $space-8;
-      line-height: $line-height-tight;
-    }
-    
-    &__text {
-      color: $color-text-muted;
-      font-size: clamp($font-size-md, 0.45vw, $font-size-lg);
-      margin-bottom: $space-10;
-      line-height: $line-height-relaxed;
-    }
+  .row {
+    align-items: center;
+  }
 
-    .badge {
-      margin-bottom: $space-6;
-    }
-    
-    // Responsive mobile : image toujours en haut
-    @include bp-down(lg) {
-      padding: $space-12 0;
-      
-      &__title {
-        font-size: clamp($font-size-lg, 1.75vw, $font-size-xl);
-      }
-    }
-  }
-  
-  // Feature list (checkmarks)
-  .feature-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    
-    &__item {
-      display: flex;
-      align-items: center;
-      gap: $space-3;
-      margin-bottom: $space-4;
-    }
-    
-    &__icon {
-      color: $color-accent-green;
-      font-size: clamp($font-size-lg, 1.25vw, $font-size-2xl);
-      flex-shrink: 0;
-    }
-    
-    &__text {
-      font-size: clamp($font-size-body, 0.45vw, $font-size-md);
-      font-weight: $font-weight-semibold;
-      color: $color-accent-green;
-    }
-  }
-  
-  // Link with underline (Technology section)
-  .link-underline {
-    color: $color-brand-primary;
-    text-decoration: none;
-    border-bottom: 3px solid $color-brand-primary;
-    padding-bottom: $space-1;
-    font-weight: $font-weight-medium;
-    display: inline-block;
-    transition: $transition-color;
-    
-    &:hover {
-      color: darken($color-brand-primary, 10%);
-      border-bottom-color: darken($color-brand-primary, 10%);
-    }
-  }
-  
-  // App Store buttons (Install section)
-  .app-stores {
-    margin-top: $space-16;
-    display: flex;
-    gap: $space-8;
-    flex-wrap: wrap;
-    
-    &__btn {
-      background: $color-black;
-      gap: $space-4;
-      text-decoration: none;
-      color: $color-white;
-      padding: $space-2 $space-6;
-      
-      &:hover {
-        background: lighten($color-black, 20%);
-        color: $color-white;
-      }
-    }
-    
-    &__icon {
-      font-size: clamp($font-size-xl, 1.25vw, $font-size-2xl);
-      color: $color-white;
-    }
-    
-    &__text {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    
-    &__label {
-      font-size: clamp($font-size-xs, 0.2vw, 0.75rem);
-      opacity: 0.7;
-      line-height: 1;
-      margin-bottom: $space-1;
-    }
-    
-    &__store {
-      font-size: clamp($font-size-lg, 0.45vw, $font-size-md);
-      font-weight: $font-weight-semibold;
-      line-height: 1;
-    }
-  }
-  
-  // Video preview component
-  .video-preview {
-    position: relative;
+  &__img {
+    width: 100%;
+    height: auto;
     border-radius: $radius-lg;
-    box-shadow: $shadow-lg;
-    overflow: hidden;
-    
-    &__thumbnail {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    
-    &__btn {
-      position: absolute;
-      top: $space-4;
-      left: $space-4;
-      background: $color-white;
-      font-size: clamp($font-size-sm, 0.22vw, 0.875rem);
-      color: $color-dark-blue;
-      transition: $transition-background;
-      box-shadow: $shadow-md;
-      padding: $space-2 $space-4;
-      
-      &:hover {
-        background: darken($color-white, 10%);
-      }
-      
-      i {
-        font-size: clamp($font-size-body, 0.45vw, $font-size-md);
-      }
+  }
+
+  &__title {
+    font-size: clamp($font-size-xl, 3vw, $font-size-2xl);
+    font-weight: $font-weight-semibold;
+    margin-bottom: $space-8;
+    line-height: $line-height-tight;
+  }
+
+  &__text {
+    color: $color-text-muted;
+    font-size: clamp($font-size-md, 0.45vw, $font-size-lg);
+    margin-bottom: $space-10;
+    line-height: $line-height-relaxed;
+  }
+
+  .badge {
+    margin-bottom: $space-6;
+  }
+
+  @include bp-down(lg) {
+    padding: $space-12 0;
+
+    &__title {
+      font-size: clamp($font-size-lg, 1.75vw, $font-size-xl);
     }
   }
+}
+
+// Sections argument : espace entre colonne texte et visuel quand elles s’empilent
+.section--tools,
+.section--features,
+.section--technology,
+.section--install {
+  @include bp-down(lg) {
+    > .container > .row {
+      row-gap: $space-8;
+    }
+  }
+}
+
+// Vignette + bouton Play (sections Features & Install ; Tools réutilise les mixins sur `.tools-preview__video`)
+.video-preview {
+  position: relative;
+  @include el-video-preview-frame;
+
+  &__thumbnail {
+    @include el-video-preview-thumbnail;
+  }
+
+  &__btn {
+    @include el-video-preview-btn;
+  }
+}

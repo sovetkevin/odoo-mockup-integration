@@ -27,6 +27,7 @@
     
     @include bp-down(lg) {
       grid-template-columns: 1fr;
+      gap: $space-5;
     }
   }
   
@@ -159,6 +160,24 @@
         .btn,
         a {
           width: 100%;
+        }
+      }
+
+      // « Learn more » : bouton outline plein largeur (comme « Sign in » dans le menu replié)
+      &-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: $space-3 $space-4;
+        border: 1px solid $color-dark-blue;
+        border-radius: $radius-base;
+        transition: $transition-all;
+
+        &:hover {
+          opacity: 1;
+          color: $color-dark-blue;
+          background: rgba($color-dark-blue, 0.06);
         }
       }
     }

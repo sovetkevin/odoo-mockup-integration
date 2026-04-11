@@ -223,3 +223,8 @@
       }
     }
   }
+
+// Lien souligné (CTA « See case studies »)
+.link-underline {
+  @include link-underline($color-brand-primary);
+}

@@ -133,10 +133,6 @@
   }
 }
 
-// =============================================================================
-// Boutons (styles dans `elements/_buttons.scss`)
-// =============================================================================
-
 /// Couleur de texte lisible sur un fond (approximation luminosité).
 @function el-fg-on($background) {
   @if lightness($background) > 58% {
@@ -169,10 +165,6 @@
   }
 }
 
-// =============================================================================
-// Badges (styles dans `elements/_badges.scss`)
-// =============================================================================
-
 @mixin el-badge-shell {
   display: inline-block;
   padding: $space-2 $space-4;
@@ -185,4 +177,67 @@
 @mixin el-badge-tone($bg) {
   background-color: $bg;
   color: $color-white;
+}
+
+// =============================================================================
+// Liens : soulignement par bordure (sections argument, cartes Awards, etc.)
+// =============================================================================
+
+/// Lien avec trait sous le texte. Couleur au survol optionnelle (sinon assombrissement léger).
+@mixin link-underline($color, $hover-color: null) {
+  color: $color;
+  text-decoration: none;
+  border-bottom: 3px solid $color;
+  padding-bottom: $space-1;
+  font-weight: $font-weight-medium;
+  display: inline-block;
+  transition: $transition-color;
+
+  &:hover {
+    @if $hover-color != null {
+      color: $hover-color;
+      border-bottom-color: $hover-color;
+    } @else {
+      color: darken($color, 10%);
+      border-bottom-color: darken($color, 10%);
+    }
+  }
+}
+
+// =============================================================================
+// Bloc vidéo : vignette + bouton (`.video-preview`, conteneurs équivalents ex. Tools)
+// =============================================================================
+
+/// Cadre visuel commun : coins, ombre, débordement masqué.
+/// Le `position` (relative / absolute) et les dimensions viennent du bloc parent.
+@mixin el-video-preview-frame {
+  border-radius: $radius-lg;
+  box-shadow: $shadow-lg;
+  overflow: hidden;
+}
+
+@mixin el-video-preview-thumbnail {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@mixin el-video-preview-btn {
+  position: absolute;
+  top: $space-4;
+  left: $space-4;
+  background: $color-white;
+  font-size: clamp($font-size-sm, 0.22vw, 0.875rem);
+  color: $color-dark-blue;
+  transition: $transition-background;
+  box-shadow: $shadow-md;
+  padding: $space-2 $space-4;
+
+  &:hover {
+    background: darken($color-white, 10%);
+  }
+
+  i {
+    font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+  }
 }

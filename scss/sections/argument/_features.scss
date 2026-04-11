@@ -1,1 +1,40 @@
-// Argument Features — surcharge / BEM reserve (.features, etc.)
+// Argument Features — liste à coches + surcharges vidéo
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+    margin-bottom: $space-4;
+  }
+
+  &__icon {
+    color: $color-accent-green;
+    font-size: clamp($font-size-lg, 1.25vw, $font-size-2xl);
+    flex-shrink: 0;
+  }
+
+  &__text {
+    font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+    font-weight: $font-weight-semibold;
+    color: $color-accent-green;
+  }
+}
+
+.section--features {
+  @include bp-down(lg) {
+    .video-preview {
+      aspect-ratio: 16 / 9;
+
+      &__thumbnail {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

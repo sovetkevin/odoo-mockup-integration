@@ -46,8 +46,8 @@ odoo-mockup-integration/
 │   │   ├── _mixins.scss         # Breakpoints, sections diagonales, séparateurs, liens, boutons
 │   │   ├── _variables.scss      # Overrides Bootstrap (couleurs thème, typo titres…)
 │   │   ├── _custom-properties.scss
-│   │   └── _bootstrap-stack.scss
-│   ├── elements/             # Badges, boutons…
+│   │   ├── _bootstrap-stack.scss
+│   │   └── _components.scss      # Surcharges globales .btn, .badge, .card
 │   └── sections/            # Header, Hero, Arguments, Tools, Features…
 ├── index.html
 ├── package.json

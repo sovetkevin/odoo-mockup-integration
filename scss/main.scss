@@ -1,4 +1,4 @@
-// Point d’entrée (voir `index.html`). Ordre : foundation → Bootstrap Icons → composants → sections.
+// Point d’entrée — ordre : tokens / mixins / variables / Bootstrap / icons / custom-properties / composants globaux / sections.
 
 @import 'foundation/tokens';
 @import 'foundation/mixins';
@@ -7,7 +7,7 @@
 @import 'bootstrap-icons/font/bootstrap-icons.css';
 
 @import 'foundation/custom-properties';
-@import 'elements/index';
+@import 'foundation/components';
 
 @import 'sections/custom';
 @import 'sections/header';

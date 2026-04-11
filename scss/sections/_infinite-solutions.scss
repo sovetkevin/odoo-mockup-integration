@@ -57,10 +57,7 @@
       align-items: flex-start;
       gap: $space-6;
       padding: $space-8;
-      border-top-left-radius: 0;
-      border-top-right-radius: 50%;
-      border-bottom-right-radius: 0;
-      border-bottom-left-radius: 50%;
+      border-radius: $radius-lg;
     }
     
     &__content {

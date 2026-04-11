@@ -105,6 +105,11 @@
       &-btn {
         border: 1px solid $color-neutral-400;
         padding: $space-2 $space-5;
+        transition: all $duration-base $ease-out;
+        &:hover {
+          background: darken($color-white, 12%);
+          border-color: darken($color-white, 12%);
+        }
       }
     }
     
@@ -166,7 +171,7 @@
       }
       
       &-digits {
-        font-size: clamp($font-size-xl, 1.25vw, $font-size-2xl);
+        font-size: clamp(calc($font-size-xl * 1.1), 1.25vw, $font-size-2xl);
         font-weight: $font-weight-medium;
         letter-spacing: $letter-spacing-wider;
         margin: 0;
@@ -263,8 +268,15 @@
       &__subtitle {
         font-size: clamp($font-size-body, 0.45vw, $font-size-md);
       }
+
+      &__partners {
+        flex-direction: column;
+        align-items: start;
+        gap: $space-4;
+      }
       
       &__card {
+        border-bottom-right-radius: $radius-xl;
         margin-top: $space-8;
         padding: $space-6;
         
@@ -278,7 +290,7 @@
       }
       
       &__bank-card {
-        padding: $space-4;
+        aspect-ratio: auto;
         margin-bottom: $space-4;
         
         &-logo {

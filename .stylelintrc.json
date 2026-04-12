@@ -1,0 +1,9 @@
+{
+  "customSyntax": "postcss-scss",
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "order/properties-alphabetical-order": true,
+    "order/custom-properties-alphabetical-order": true
+  },
+  "ignoreFiles": ["node_modules/**"]
+}

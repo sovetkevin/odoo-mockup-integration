@@ -3,15 +3,17 @@
   // Piste du carrousel : hauteur de référence pour l’alternance flex-start / flex-end
   // (les cartes gardent une hauteur naturelle selon le contenu).
   $awards-carousel-track-height: 350px; 
+
   background: $color-surface-awards;
+  overflow-x: hidden;
   padding: $space-32 0;
+
   @include section-diagonal-padding-bottom($space-32);
   @include section-diagonal-bottom-mirror-v;
-  overflow-x: hidden;
   
   &__header {
-    text-align: left;
     margin-bottom: $space-20;
+    text-align: left;
     
     .badge {
       margin-bottom: $space-8;
@@ -21,8 +23,8 @@
   &__title {
     font-size: var(--text-section-title-sm);
     font-weight: $font-weight-semibold;
-    margin: 0;
     line-height: $line-height-tight;
+    margin: 0;
   }
   
   &__carousel-wrapper {
@@ -31,26 +33,26 @@
   }
   
   &__carousel {
+    align-items: stretch;
     display: flex;
     gap: $space-8;
-    align-items: stretch;
     min-height: $awards-carousel-track-height;
   }
   
   &__card {
+    align-items: center;
     background: $color-white;
     border-radius: $radius-lg;
-    padding: $space-12 $space-12;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    gap: $space-8;
-    width: 280px;
     flex-shrink: 0;
+    gap: $space-8;
+    justify-content: space-between;
+    padding: $space-12 $space-12;
+    text-align: center;
     transition: transform $duration-base $ease-out,
       box-shadow $duration-base $ease-out;
+    width: 280px;
 
     // Une carte sur deux : bas / haut de la piste (piste = min-height du carrousel)
     &:nth-child(odd) {
@@ -62,36 +64,36 @@
     }
 
     &:hover {
-      transform: translateY(-8px);
       box-shadow: $shadow-2xl;
       cursor: pointer;
+      transform: translateY(-8px);
     }
     
     &-logo {
       height: 40px;
-      width: auto;
       max-width: 100%;
       object-fit: contain;
       transform : scale(1.2);
+      width: auto;
     }
     
     &-content {
+      align-items: center;
       display: flex;
       flex-direction: column;
       gap: $space-2;
-      align-items: center;
-      width: 100%;
-      text-align: center;
       padding: 0;
+      text-align: center;
+      width: 100%;
     }
     
     // Type Rating
     &--rating {
       .awards__card-rating {
         display: flex;
-        justify-content: center;
-        gap: $space-1;
         font-size: var(--font-size-lg);
+        gap: $space-1;
+        justify-content: center;
         margin-bottom: $space-4;
         
         .bi-star-fill {
@@ -104,15 +106,15 @@
       }
       
       .awards__card-score {
-        font-weight: $font-weight-semibold;
-        font-size: var(--font-size-lg);
-        margin: 0;
         color: $color-text-primary;
+        font-size: var(--font-size-lg);
+        font-weight: $font-weight-semibold;
+        margin: 0;
       }
       
       .awards__card-reviews {
-        font-size: var(--text-caption);
         color: $color-text-muted;
+        font-size: var(--text-caption);
       }
     }
     
@@ -120,15 +122,16 @@
     &--desc {
       .awards__card-text {
         color: $color-text-muted;
-        margin: 0 0 $space-4 0;
-        line-height: $line-height-relaxed;
         font-size: var(--text-body);
+        line-height: $line-height-relaxed;
+        margin: 0 0 $space-4;
         overflow-wrap: break-word;
         word-break: break-word;
       }
       
       .awards__card-link {
         @include link-underline($color-dark-blue, lighten($color-dark-blue, 20%));
+
         white-space: nowrap;
       }
     }
@@ -136,17 +139,17 @@
   
   // Responsive
   @include bp-down(lg) {
-    padding: $space-12 0;
-    @include section-diagonal-padding-bottom($space-12, $space-4);
     overflow-x: hidden;
+    padding: $space-12 0;
+
+    @include section-diagonal-padding-bottom($space-12, $space-4);
 
     &__carousel-wrapper {
-      overflow-x: auto;
-      overflow-y: auto;
+      overflow: auto;
       -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
       -ms-overflow-style: none;
       padding: 0;
+      scrollbar-width: none;
 
       &::-webkit-scrollbar {
         display: none;
@@ -162,18 +165,17 @@
     }
     
     &__carousel {
-      flex-direction: row;
-      flex-wrap: nowrap;
-      gap: $space-4;
-      padding: $space-2 0 $space-6;
-      min-height: unset;
       align-items: stretch;
+      flex-flow: row nowrap;
+      gap: $space-4;
+      min-height: unset;
+      padding: $space-2 0 $space-6;
 
       > .awards__card {
-        min-width: 240px;
-        width: 240px;
         flex-shrink: 0;
+        min-width: 240px;
         padding: $space-10 $space-8;
+        width: 240px;
 
         &:nth-child(odd),
         &:nth-child(even) {

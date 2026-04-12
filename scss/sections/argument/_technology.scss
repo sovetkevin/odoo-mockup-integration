@@ -1,32 +1,33 @@
 // Technology section
 .technology-preview {
+    align-items: stretch;
     display: flex;
     gap: $space-6;
     justify-content: center;
-    align-items: stretch;
 
     .card {
         transition: transform $duration-base $ease-out,
                     box-shadow $duration-base $ease-out;
+
         &:hover {
-            transform: translateY(-8px);
             box-shadow: $shadow-2xl;
             cursor: pointer;
+            transform: translateY(-8px);
           }
     }
 
     .awards__card {
-      width: 100%;
-      min-width: 0;
       align-self: stretch;
+      min-width: 0;
+      width: 100%;
     }
 
     &__col {
-      flex: 1 1 calc(50% - #{$space-6} / 2);
-      min-width: 0;
       display: flex;
+      flex: 1 1 calc(50% - #{$space-6} / 2);
       flex-direction: column;
       gap: $space-6;
+      min-width: 0;
     }
 
     &__col--left {
@@ -48,51 +49,51 @@
   
   // User Card
   .user-card {
-    padding: 0;
     overflow: hidden;
+    padding: 0;
     
     &__img {
-      width: 100%;
       aspect-ratio: 1 / 1;
-      object-fit: cover;
       display: block;
+      object-fit: cover;
+      width: 100%;
     }
     
     &__footer {
-      display: flex;
       align-items: center;
-      padding: $space-6;
+      display: flex;
       gap: $space-5;
+      padding: $space-6;
     }
     
     &__avatar {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: $color-accent-yellow;
-      display: flex;
       align-items: center;
-      justify-content: center;
+      background: $color-accent-yellow;
+      border-radius: 50%;
+      color: $color-white;
+      display: flex;
+      flex-shrink: 0;
       font-size: var(--font-size-md);
       font-weight: $font-weight-semibold;
-      color: $color-white;
-      flex-shrink: 0;
+      height: 56px;
+      justify-content: center;
+      width: 56px;
     }
     
     &__name {
+      color: $color-text-primary;
+      flex: 1;
       font-size: var(--text-body);
       font-weight: $font-weight-semibold;
-      color: $color-text-primary;
       margin: 0;
-      flex: 1;
     }
     
     &__like {
       background: none;
       border: none;
       color: $color-text-muted;
-      font-size: var(--font-size-md);
       cursor: pointer;
+      font-size: var(--font-size-md);
       padding: 0;
       transition: $transition-color;
       
@@ -108,21 +109,21 @@
     padding: $space-6;
     
     &__content {
-      display: flex;
       align-items: center;
+      display: flex;
       gap: $space-4;
     }
     
     &__icon {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
+      align-items: center;
       background: $color-accent-green;
+      border-radius: 50%;
       color: $color-white;
       display: flex;
-      align-items: center;
-      justify-content: center;
       flex-shrink: 0;
+      height: 64px;
+      justify-content: center;
+      width: 64px;
       
       i {
         font-size: var(--font-size-xl);
@@ -134,15 +135,15 @@
     }
     
     &__title {
+      color: $color-text-primary;
       font-size: var(--font-size-md);
       font-weight: $font-weight-semibold;
-      color: $color-text-primary;
       margin: 0 0 $space-1;
     }
     
     &__subtitle {
-      font-size: var(--text-body);
       color: $color-text-muted;
+      font-size: var(--text-body);
     }
   }
   
@@ -151,31 +152,31 @@
     padding: $space-10;
     
     &__content {
+      align-items: center;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
       gap: $space-4;
       padding-bottom: $space-4;
+      text-align: center;
     }
     
     &__logo {
-      width: 80px;
-      height: 80px;
       border-radius: 50%;
+      height: 80px;
       overflow: hidden;
+      width: 80px;
       
       img {
-        width: 100%;
         height: 100%;
         object-fit: cover;
+        width: 100%;
       }
     }
     
     &__title {
+      color: $color-text-primary;
       font-size: var(--font-size-md);
       font-weight: $font-weight-semibold;
-      color: $color-text-primary;
       margin: 0;
     }
     
@@ -186,11 +187,11 @@
     }
     
     &__avatar {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
       border: 2px solid $color-white;
+      border-radius: 50%;
+      height: 40px;
       object-fit: cover;
+      width: 40px;
       
       &:not(:first-child) {
         margin-left: -8px; // Superposition
@@ -198,12 +199,12 @@
     }
     
     &__actions {
-      display: flex;
-      justify-content: space-between;
-      gap: 2rem;
-      padding-top: $space-4;
-      margin: 0 auto;
       border-top: 1px solid $color-border-light;
+      display: flex;
+      gap: 2rem;
+      justify-content: space-between;
+      margin: 0 auto;
+      padding-top: $space-4;
       width: 60%;
     }
     
@@ -211,8 +212,8 @@
       background: none;
       border: none;
       color: $color-text-muted;
-      font-size: var(--font-size-md);
       cursor: pointer;
+      font-size: var(--font-size-md);
       padding: 0;
       transition: $transition-color;
       

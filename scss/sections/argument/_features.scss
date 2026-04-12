@@ -2,25 +2,25 @@
 
 .feature-list {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
 
   &__item {
-    display: flex;
     align-items: center;
+    display: flex;
     gap: $space-3;
     margin-bottom: $space-4;
   }
 
   &__icon {
     color: $color-accent-green;
-    font-size: clamp($font-size-lg, 1.25vw, $font-size-2xl);
     flex-shrink: 0;
+    font-size: clamp($font-size-lg, 1.25vw, $font-size-2xl);
   }
 
   &__text {
+    color: $color-accent-green;
     font-size: var(--text-body);
     font-weight: $font-weight-semibold;
-    color: $color-accent-green;
   }
 }

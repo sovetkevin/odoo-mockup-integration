@@ -7,18 +7,22 @@
 /// `min-width` au seuil nommé (ex. `bp-min(lg)` → 992px).
 @function bp-min($name) {
   $v: map-get($breakpoints, $name);
+
   @if $v == null {
     @error "Breakpoint inconnu : #{$name}. Clés : xs, sm, md, lg, xl, xxl.";
   }
+
   @return $v;
 }
 
 /// `max-width` juste en dessous du seuil (ex. `bp-max(lg)` → 991px).
 @function bp-max($name) {
   $v: bp-min($name);
+
   @if $v == 0 {
     @error "bp-max(xs) : utiliser un seuil non nul (sm, md, lg, …).";
   }
+
   @return $v - 1px;
 }
 
@@ -44,26 +48,26 @@
 /// `100cqw` = largeur du bloc (via `container-type`), pas `100vw` (viewport) — évite un angle
 /// disproportionné en prod quand la section ≠ largeur viewport ou avec barre de défilement.
 @mixin section-diagonal-bottom($angle: $section-diagonal-angle) {
-  position: relative;
-  container-type: inline-size;
   clip-path: polygon(
     0 0,
     100% 0,
     100% 100%,
     0 calc(100% - 100cqw * tan(#{$angle}))
   );
+  container-type: inline-size;
+  position: relative;
 }
 
 /// Même angle ; **miroir vertical** (symétrie gauche–droite) : coin bas-**droit** relevé — Hero & Awards.
 @mixin section-diagonal-bottom-mirror-v($angle: $section-diagonal-angle) {
-  position: relative;
-  container-type: inline-size;
   clip-path: polygon(
     0 0,
     100% 0,
     100% calc(100% - 100cqw * tan(#{$angle})),
     0 100%
   );
+  container-type: inline-size;
+  position: relative;
 }
 
 /// Marge bas supplémentaire 
@@ -73,14 +77,14 @@
 
 /// Coupe haute inclinée (miroir de `section-diagonal-bottom`)
 @mixin section-diagonal-top($angle: $section-diagonal-angle) {
-  position: relative;
-  container-type: inline-size;
   clip-path: polygon(
     0 calc(100cqw * tan(#{$angle})),
     100% 0,
     100% 100%,
     0 100%
   );
+  container-type: inline-size;
+  position: relative;
 }
 
 /// Marge haute supplémentaire
@@ -94,45 +98,45 @@
 
 /// Bord bas : transparent → blanc léger au centre → transparent.
 @mixin el-separator-fade-x-bottom($peak-alpha: $separator-fade-white-peak) {
-  position: relative;
   border-bottom: none;
+  position: relative;
 
   &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 1px;
-    pointer-events: none;
     background: linear-gradient(
       90deg,
       transparent 0%,
       rgba($color-white, $peak-alpha) 50%,
       transparent 100%
     );
+    bottom: 0;
+    content: '';
+    height: 1px;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
   }
 }
 
 /// Bord haut : même dégradé horizontal.
 @mixin el-separator-fade-x-top($peak-alpha: $separator-fade-white-peak) {
-  position: relative;
   border-top: none;
+  position: relative;
 
   &::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    height: 1px;
-    pointer-events: none;
     background: linear-gradient(
       90deg,
       transparent 0%,
       rgba($color-white, $peak-alpha) 50%,
       transparent 100%
     );
+    content: '';
+    height: 1px;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 }
 
@@ -141,40 +145,41 @@
   @if lightness($background) > 58% {
     @return $color-dark-blue;
   }
+
   @return $color-white;
 }
 
 @mixin el-button-layout {
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: $space-2;
-  font-weight: $font-weight-semibold;
   border-radius: $radius-base;
+  display: inline-flex;
+  font-weight: $font-weight-semibold;
+  gap: $space-2;
+  justify-content: center;
   transition: $transition-all;
 }
 
 /// Bouton plein : fond + hover (assombrissement marqué au survol).
 @mixin el-button-solid($bg, $bg-hover: darken($bg, 15%)) {
-  color: el-fg-on($bg);
   background-color: $bg;
   border-color: $bg;
+  color: el-fg-on($bg);
 
   &:hover,
   &:focus {
-    color: el-fg-on($bg-hover);
     background-color: $bg-hover;
     border-color: $bg-hover;
+    color: el-fg-on($bg-hover);
   }
 }
 
 @mixin el-badge-shell {
-  display: inline-block;
-  padding: $space-2 $space-4;
   border-radius: $radius-full;
+  display: inline-block;
   font-size: var(--text-caption);
   font-weight: $font-weight-semibold;
   line-height: 1;
+  padding: $space-2 $space-4;
 }
 
 @mixin el-badge-tone($bg) {
@@ -188,21 +193,21 @@
 
 /// Lien avec trait sous le texte. Couleur au survol optionnelle (sinon assombrissement léger).
 @mixin link-underline($color, $hover-color: null) {
-  color: $color;
-  text-decoration: none;
   border-bottom: 3px solid $color;
-  padding-bottom: $space-1;
-  font-weight: $font-weight-medium;
+  color: $color;
   display: inline-block;
+  font-weight: $font-weight-medium;
+  padding-bottom: $space-1;
+  text-decoration: none;
   transition: $transition-color;
 
   &:hover {
     @if $hover-color != null {
-      color: $hover-color;
       border-bottom-color: $hover-color;
+      color: $hover-color;
     } @else {
-      color: darken($color, 10%);
       border-bottom-color: darken($color, 10%);
+      color: darken($color, 10%);
     }
   }
 }
@@ -219,21 +224,21 @@
 }
 
 @mixin el-video-preview-thumbnail {
-  width: 100%;
-  height: auto;
   display: block;
+  height: auto;
+  width: 100%;
 }
 
 @mixin el-video-preview-btn {
+  background: $color-white;
+  box-shadow: $shadow-md;
+  color: $color-dark-blue;
+  font-size: var(--text-caption);
+  left: $space-4;
+  padding: $space-2 $space-4;
   position: absolute;
   top: $space-4;
-  left: $space-4;
-  background: $color-white;
-  font-size: var(--text-caption);
-  color: $color-dark-blue;
   transition: $transition-background;
-  box-shadow: $shadow-md;
-  padding: $space-2 $space-4;
 
   &:hover {
     background: darken($color-white, 10%);

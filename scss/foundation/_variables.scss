@@ -23,14 +23,12 @@ $font-family-base: $font-family-primary;
 
 // Valeur numérique obligatoire (Bootstrap : $lead-font-size, dérivés, etc.).
 $font-size-base: $font-size-root;
-
 $h1-font-size: clamp($font-size-3xl, 5vw, 3.25rem);
 $h2-font-size: clamp($font-size-xl, 3vw, $font-size-2xl);
 $h3-font-size: clamp($font-size-lg, 1.75vw, $font-size-xl);
 $h4-font-size: clamp($font-size-md, 0.85vw, $font-size-lg);
 $h5-font-size: clamp($font-size-body, 0.45vw, $font-size-md);
 $h6-font-size: clamp($font-size-sm, 0.3vw, 0.875rem);
-
 $headings-font-weight: $font-weight-bold;
 $headings-line-height: $line-height-tight;
 
@@ -39,7 +37,6 @@ $grid-breakpoints: $breakpoints;
 
 // === SPACING BOOTSTRAP ===
 $spacer: $space-base;
-
 $spacers: (
   0: $space-0,
   1: $space-1,
@@ -84,7 +81,6 @@ $navbar-padding-y: $space-6;
 $navbar-brand-font-size: $font-size-lg;
 $navbar-nav-link-padding-x: $space-3;
 $navbar-toggler-border-radius: $radius-base;
-
 $navbar-dark-color: rgba($color-white, 0.9);
 $navbar-dark-hover-color: $color-white;
 $navbar-dark-active-color: $color-white;
@@ -102,23 +98,17 @@ $badge-border-radius: $radius-base;
 $accordion-button-icon: none;
 $accordion-button-active-icon: none;
 $accordion-icon-width: 0;
-
 $accordion-icon-transform: none;
-
 $accordion-button-icon-dark: none;
 $accordion-button-active-icon-dark: none;
 $accordion-border-radius: $radius-base;
 $accordion-border-color: $color-neutral-100;
-
 $accordion-button-active-bg: $color-neutral-50;
 $accordion-button-active-color: $color-text-primary;
-
 $accordion-button-bg: $color-white;
 $accordion-button-color: $color-text-primary;
-
 $accordion-button-padding-y: $space-6;
 $accordion-button-padding-x: $space-8;
-
 $accordion-button-focus-box-shadow: none;
 
 // === PROGRESS BAR ===

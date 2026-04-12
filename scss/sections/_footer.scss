@@ -3,17 +3,19 @@
 .footer {
   background: $color-dark-blue;
   color: $color-white;
+  overflow: hidden;
   padding: $space-16 0 $space-8;
+
   @include section-diagonal-padding-top($space-16);
   @include section-diagonal-top;
-  overflow: hidden;
   
   &__cta {
+    align-items: center;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding-bottom: $space-12;
     margin-bottom: $space-12;
+    padding-bottom: $space-12;
+
     @include el-separator-fade-x-bottom;
     
     &-content {
@@ -22,22 +24,22 @@
     }
     
     &-title {
+      color: $color-white;
       font-size: var(--text-section-title);
       font-weight: $font-weight-semibold;
       margin: 0 0 $space-2;
-      color: $color-white;
     }
     
     &-subtitle {
       color: rgba($color-white, 0.8);
-      margin: 0;
       font-size: $font-size-lg;
+      margin: 0;
     }
     
     &-buttons {
       display: flex;
-      gap: $space-5;
       flex-shrink: 0;
+      gap: $space-5;
     }
     
     &-btn {
@@ -55,9 +57,9 @@
   }
   
   &__logo {
+    filter: brightness(0) invert(1);
     height: 36px;
-    margin-bottom: $space-6;
-    filter: brightness(0) invert(1); 
+    margin-bottom: $space-6; 
   }
   
   &__description {
@@ -77,18 +79,18 @@
     display: flex;
     gap: $space-4;
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
     
     &-link {
-      display: flex;
       align-items: center;
-      justify-content: start;
-      width: 40px;
-      height: 40px;
       color: rgba($color-white, 0.6);
+      display: flex;
+      height: 40px;
+      justify-content: start;
       text-decoration: none;
       transition: color $duration-base $ease-out;
+      width: 40px;
       
       &:hover {
         color: $color-white;
@@ -102,18 +104,18 @@
   
   &__nav {
     &-title {
-      font-weight: $font-weight-semibold;
-      font-size: var(--font-size-md);
-      margin-bottom: $space-4;
       color: $color-white;
+      font-size: var(--font-size-md);
+      font-weight: $font-weight-semibold;
+      margin-bottom: $space-4;
     }
     
     &-list {
       display: flex;
       flex-direction: column;
       list-style: none;
-      padding: 0;
       margin: 0;
+      padding: 0;
       
       li {
         margin-bottom: $space-2;
@@ -126,10 +128,10 @@
     
     &-link {
       color: rgba($color-white, 0.6);
-      text-decoration: none;
       font-size: var(--text-body);
-      transition: $transition-color;
       padding: 0;
+      text-decoration: none;
+      transition: $transition-color;
       
       &:hover {
         color: $color-white;
@@ -138,21 +140,22 @@
   }
   
   &__bottom {
+    align-items: center;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding-top: $space-8;
+
     @include el-separator-fade-x-top;
   }
   
   &__copyright {
     color: rgba($color-white, 0.6);
-    margin: 0;
     font-size: var(--text-body);
+    margin: 0;
     
     strong {
-      font-weight: $font-weight-semibold;
       color: rgba($color-white, 0.8);
+      font-weight: $font-weight-semibold;
     }
   }
   
@@ -162,10 +165,10 @@
     
     &-link {
       color: rgba($color-white, 0.6);
-      text-decoration: none;
       font-size: var(--text-body);
-      transition: $transition-color;
       padding: 0;
+      text-decoration: none;
+      transition: $transition-color;
       
       &:hover {
         color: $color-white;
@@ -176,22 +179,23 @@
   // Responsive
   @include bp-down(lg) {
     padding: $space-12 0 $space-6;
+
     @include section-diagonal-padding-top($space-12, $space-12);
     
     &__cta {
-      flex-direction: column;
       align-items: flex-start;
+      flex-direction: column;
       gap: $space-6;
-      padding-bottom: $space-8;
       margin-bottom: $space-8;
+      padding-bottom: $space-8;
       
       &-buttons {
-        width: 100%;
         flex-direction: column;
+        width: 100%;
         
         .btn {
-          width: 100%;
           justify-content: center;
+          width: 100%;
         }
       }
     }
@@ -208,9 +212,9 @@
   // Très petit écran uniquement : copyright + liens légaux empilés (au-dessus de sm : une ligne)
   @include bp-down(sm) {
     &__bottom {
+      align-items: flex-start;
       flex-direction: column;
       gap: $space-4;
-      align-items: flex-start;
       padding-top: $space-6;
     }
 

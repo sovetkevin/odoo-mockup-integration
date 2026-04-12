@@ -262,11 +262,11 @@
       @include section-diagonal-padding-bottom($space-12, $space-12);
       
       &__title {
-        font-size: var(--text-section-title);
+        max-width: 100%;
       }
       
       &__subtitle {
-        font-size: var(--text-body);
+        max-width: 100%;
       }
 
       &__partners {

@@ -1,26 +1,26 @@
 import { defineConfig } from 'vite';
 import path from 'path';
 
-function cssBeforeModuleScript() {
+function forceAppStylesheetFirst() {
   return {
-    name: 'css-before-module-script',
+    name: 'force-app-stylesheet-first',
     apply: 'build',
     transformIndexHtml: {
       order: 'post',
       handler(html) {
-        const linkRe = /<link[^>]+rel="stylesheet"[^>]*>/gi;
-        const links = html.match(linkRe);
-        if (!links?.length) return html;
+        const re =
+          /<link\b[^>]*\brel=["']stylesheet["'][^>]*\bhref=["'][^"']*\/assets\/index-[^"'?]+\.css["'][^>]*>/gi;
+        const tags = [...html.matchAll(re)].map((m) => m[0]);
+        if (!tags.length) return html;
 
         let out = html;
-        for (const tag of links) {
-          out = out.replace(tag, '');
+        for (const t of tags) {
+          out = out.replace(t, '');
         }
-        const block = links.join('\n    ');
-        if (out.includes('</title>')) {
-          return out.replace('</title>', `</title>\n    ${block}`);
-        }
-        return out.replace(/<head(\s[^>]*)?>/i, (m) => `${m}\n    ${block}`);
+        const block = tags.join('\n    ');
+        return out.includes('</title>')
+          ? out.replace('</title>', `</title>\n    ${block}`)
+          : out;
       },
     },
   };
@@ -31,7 +31,7 @@ function cssBeforeModuleScript() {
 export default defineConfig(({ mode }) => ({
   base: mode === 'production' ? '/odoo-mockup-integration/' : '/',
 
-  plugins: [cssBeforeModuleScript()],
+  plugins: [forceAppStylesheetFirst()],
 
   resolve: {
     alias: {

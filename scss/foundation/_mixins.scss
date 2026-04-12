@@ -41,24 +41,28 @@
 // =============================================================================
 
 /// Coupe basse : coin bas-**gauche** relevé (bord incliné monte vers la gauche).
+/// `100cqw` = largeur du bloc (via `container-type`), pas `100vw` (viewport) — évite un angle
+/// disproportionné en prod quand la section ≠ largeur viewport ou avec barre de défilement.
 @mixin section-diagonal-bottom($angle: $section-diagonal-angle) {
   position: relative;
+  container-type: inline-size;
   clip-path: polygon(
     0 0,
     100% 0,
     100% 100%,
-    0 calc(100% - 100vw * tan(#{$angle}))
+    0 calc(100% - 100cqw * tan(#{$angle}))
   );
 }
 
 /// Même angle ; **miroir vertical** (symétrie gauche–droite) : coin bas-**droit** relevé — Hero & Awards.
 @mixin section-diagonal-bottom-mirror-v($angle: $section-diagonal-angle) {
   position: relative;
+  container-type: inline-size;
   clip-path: polygon(
     0 0,
     100% 0,
-    100% calc(100% - 100vw * tan(#{$angle})),
-    0 100
+    100% calc(100% - 100cqw * tan(#{$angle})),
+    0 100%
   );
 }
 
@@ -70,8 +74,9 @@
 /// Coupe haute inclinée (miroir de `section-diagonal-bottom`)
 @mixin section-diagonal-top($angle: $section-diagonal-angle) {
   position: relative;
+  container-type: inline-size;
   clip-path: polygon(
-    0 calc(100vw * tan(#{$angle})),
+    0 calc(100cqw * tan(#{$angle})),
     100% 0,
     100% 100%,
     0 100%

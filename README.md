@@ -20,6 +20,7 @@ Démontrer la maîtrise de :
 | Framework CSS | Bootstrap 5.3 |
 | Icônes | Bootstrap Icons |
 | Build | Vite |
+| Lint SCSS (ordre des propriétés) | [Stylelint](https://stylelint.io/) + [stylelint-order](https://github.com/hudochenkov/stylelint-order) |
 
 ## Installation
 
@@ -32,6 +33,8 @@ npm run dev
 
 - **`npm run build`** — bundle de production dans `/dist`
 - **`npm run preview`** — prévisualiser le build localement
+- **`npm run stylelint`** — vérifie l’ordre alphabétique des propriétés CSS dans les feuilles SCSS
+- **`npm run stylelint:fix`** — réapplique automatiquement ce tri (voir ci-dessous)
 
 ## Structure du projet
 
@@ -61,6 +64,7 @@ odoo-mockup-integration/
 │       └── _footer.scss
 ├── index.html
 ├── package.json
+├── .stylelintrc.json           # Règles d’ordre des propriétés SCSS (stylelint-order)
 └── vite.config.js
 ```
 
@@ -143,6 +147,13 @@ Le Hero utilise `overflow: hidden` avec la diagonale. La section Awards gère le
 ### Navigation interne (ancres)
 
 Les liens de démo pointent vers des **`id` sur les sections** (`#home`, `#products`, `#pages`, `#app`, `#docs`, `#buy`, `#case-studies`, `#signin`, `#footer`, etc.) plutôt que vers `href="#"`, pour éviter le saut en tête de page et garder un comportement cohérent au clavier / lecteur d’écran. Un **`scroll-margin-top`** compense le header fixe (règle en fin de `sections/_header.scss`).
+
+### Stylelint — ordre alphabétique des propriétés SCSS
+
+Les déclarations dans chaque bloc (propriétés CSS et variables dans `:root`) sont tenues en **ordre alphabétique** pour faciliter la relecture et les diffs, via **`stylelint-order`** (`order/properties-alphabetical-order` et `order/custom-properties-alphabetical-order`). La config est dans **`.stylelintrc.json`** ; le parseur SCSS utilise **`postcss-scss`**.
+
+- Après une modification manuelle d’une feuille, lancer **`npm run stylelint:fix`** pour réaligner l’ordre sans toucher à la logique des styles.
+- Les **`@include`** restent en tête de bloc lorsqu’il n’y a pas d’autres propriétés mélangées (comportement habituel de l’outil).
 
 ## Licence
 

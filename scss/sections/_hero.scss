@@ -153,6 +153,8 @@
       
       &-badge {
         letter-spacing: $letter-spacing-wide;
+        border-radius: $radius-base;
+        padding: $space-2 $space-3;
       }
       
       &-number {

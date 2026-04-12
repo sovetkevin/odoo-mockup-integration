@@ -1,4 +1,4 @@
-// Technology section — Mosaic grid with 4 cards
+// Technology section
 .technology-preview {
     display: flex;
     gap: $space-6;
@@ -15,7 +15,6 @@
           }
     }
 
-    // Cas spécifique Technology : la carte awards occupe toute la largeur de sa colonne
     .awards__card {
       width: 100%;
       min-width: 0;

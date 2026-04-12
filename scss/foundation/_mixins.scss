@@ -1,5 +1,4 @@
 // Mixins & petites fonctions — `scss/foundation/_mixins.scss`
-// À charger après `foundation/tokens` (voir `main.scss`).
 
 // =============================================================================
 // Breakpoints (s’appuient sur `$breakpoints` dans `_tokens.scss`)
@@ -59,17 +58,16 @@
     0 0,
     100% 0,
     100% calc(100% - 100vw * tan(#{$angle})),
-    0 100%
+    0 100
   );
 }
 
-/// Marge bas supplémentaire : la coupe diagonale réduit visuellement la hauteur du bloc.
+/// Marge bas supplémentaire 
 @mixin section-diagonal-padding-bottom($padding-y, $clamp-max: $space-20) {
   padding-bottom: calc(#{$padding-y} + clamp(#{$space-6}, 6vw, #{$clamp-max}));
 }
 
-/// Coupe haute inclinée (miroir de `section-diagonal-bottom`) : s’aligne avec la fin inclinée d’une section au-dessus.
-/// Même symétrie gauche–droite que la coupe basse.
+/// Coupe haute inclinée (miroir de `section-diagonal-bottom`)
 @mixin section-diagonal-top($angle: $section-diagonal-angle) {
   position: relative;
   clip-path: polygon(
@@ -80,7 +78,7 @@
   );
 }
 
-/// Marge haute supplémentaire : compense la partie « mangée » par la coupe du haut.
+/// Marge haute supplémentaire
 @mixin section-diagonal-padding-top($padding-y, $clamp-max: $space-20) {
   padding-top: calc(#{$padding-y} + clamp(#{$space-6}, 6vw, #{$clamp-max}));
 }
@@ -209,7 +207,6 @@
 // =============================================================================
 
 /// Cadre visuel commun : coins, ombre, débordement masqué.
-/// Le `position` (relative / absolute) et les dimensions viennent du bloc parent.
 @mixin el-video-preview-frame {
   border-radius: $radius-lg;
   box-shadow: $shadow-lg;

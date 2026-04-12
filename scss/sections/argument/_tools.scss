@@ -1,4 +1,12 @@
-// Tools section — Preview with video + progression card
+// Tools section 
+
+.section--tools {
+  .section__text {
+    margin-bottom: 0;
+  }
+}
+
+
 .tools-preview {
     position: relative;
     min-height: 500px;
@@ -51,7 +59,7 @@
       margin-bottom: $space-4;
     }
 
-    // Tablette & mobile : flux vertical, pleine largeur du container, pas de superposition
+    // Responsive
     @include bp-down(lg) {
       position: static;
       min-height: auto;
@@ -96,7 +104,7 @@
     }
   }
   
-  // Progress items (header + Bootstrap progress)
+  // Progress items
   .progress-item {
     margin-bottom: $space-6;
     
@@ -134,9 +142,6 @@
       font-size: var(--text-caption);
     }
     
-    // Bootstrap progress est deja stylise via les variables
-    // Pas besoin de CSS supplementaire ici
-    
     @include bp-down(lg) {
       margin-bottom: $space-4;
       
@@ -146,10 +151,3 @@
       }
     }
   }
-
-// Section Tools : pas de marge sous le paragraphe d’intro
-.section--tools {
-  .section__text {
-    margin-bottom: 0;
-  }
-}

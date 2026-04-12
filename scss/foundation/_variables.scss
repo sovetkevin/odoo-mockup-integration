@@ -1,8 +1,5 @@
 // Importé *avant* `foundation/bootstrap-stack`.
 // Les variables ci‑dessous sont lues par `bootstrap/scss/_variables.scss`
-// et `variables-dark` via le mécanisme `!default` : si une variable est déjà
-// définie ici, Bootstrap ne la réécrit pas. Objectif : éviter les surcharges
-// tardives (`!important`) dans les sections.
 
 // === COULEURS BOOTSTRAP (bridge unique depuis les tokens) ===
 $primary: $color-brand-primary;
@@ -71,7 +68,6 @@ $box-shadow-sm: $shadow-sm;
 $box-shadow-lg: $shadow-lg;
 
 // === BUTTONS BOOTSTRAP ===
-// Alignement global des boutons sur l’échelle d’espacements et la typo du design system.
 $btn-padding-y: $space-4;
 $btn-padding-x: $space-8;
 $btn-font-weight: $font-weight-semibold;
@@ -84,14 +80,11 @@ $card-border-color: $color-neutral-100;
 $card-box-shadow: $shadow-md;
 
 // === NAVBAR BOOTSTRAP ===
-// Padding de base ; les sections (ex. header) peuvent encore affiner avec `.navbar { padding: … }`.
 $navbar-padding-y: $space-6;
-// Taille fixe : Bootstrap calcule $navbar-brand-height = font-size * line-height.
 $navbar-brand-font-size: $font-size-lg;
 $navbar-nav-link-padding-x: $space-3;
 $navbar-toggler-border-radius: $radius-base;
-// Header sur fond brand : on cale `navbar-dark` sur les tokens (liens blancs, hover plein blanc).
-// Réduit le besoin de réécrire `.nav-link` quand on s’aligne sur les classes Bootstrap.
+
 $navbar-dark-color: rgba($color-white, 0.9);
 $navbar-dark-hover-color: $color-white;
 $navbar-dark-active-color: $color-white;
@@ -106,40 +99,31 @@ $badge-padding-x: $space-2;
 $badge-border-radius: $radius-base;
 
 // === ACCORDION BOOTSTRAP ===
-// Pas de chevron SVG Bootstrap : icônes custom dans `sections/_faq.scss`.
-// `none` + largeur 0 suppriment le visuel ; le pseudo `::after` reste dans le DOM (léger flex item).
 $accordion-button-icon: none;
 $accordion-button-active-icon: none;
 $accordion-icon-width: 0;
-// Avec icône SVG désactivée, évite une transformation inutile sur le pseudo.
+
 $accordion-icon-transform: none;
-// Mode sombre : mêmes réglages pour que `color-mode(dark)` ne réinjecte pas un chevron.
+
 $accordion-button-icon-dark: none;
 $accordion-button-active-icon-dark: none;
 $accordion-border-radius: $radius-base;
 $accordion-border-color: $color-neutral-100;
-// `$accordion-inner-border-radius` reste au défaut Bootstrap : il est recalculé après coup
-// à partir de `$accordion-border-radius` et `$accordion-border-width` lors de l’import des variables BS.
-// FAQ / cartes : fond neutre ouvert, texte lisible (tokens, pas les subtle Bootstrap par défaut).
+
 $accordion-button-active-bg: $color-neutral-50;
 $accordion-button-active-color: $color-text-primary;
-// Bouton replié : même fond que la carte FAQ (évite un gris `body-bg` si différent du blanc maquette).
+
 $accordion-button-bg: $color-white;
 $accordion-button-color: $color-text-primary;
-// Padding aligné sur la section FAQ (une seule source de vérité côté Bootstrap + section légère).
+
 $accordion-button-padding-y: $space-6;
 $accordion-button-padding-x: $space-8;
-// Focus : pas d’ombre portée imposée par Bootstrap ; la section peut affiner bordure / outline si besoin.
+
 $accordion-button-focus-box-shadow: none;
 
 // === PROGRESS BAR ===
-// Hauteur 2px au lieu de 1rem Bootstrap par défaut
 $progress-height: 3px;
-// Fond neutral-200 pour la barre non progressée
 $progress-bg: $color-neutral-200;
-// Barre de progression jaune
 $progress-bar-bg: $color-accent-yellow;
-// Radius complet pour arrondir
 $progress-border-radius: $radius-full;
-// Pas de transition Bootstrap par défaut (on gère nous-mêmes si besoin)
 $progress-bar-transition: width $duration-base $ease-out;

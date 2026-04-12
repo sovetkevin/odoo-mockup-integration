@@ -1,4 +1,5 @@
-// Hero section styles
+// Hero section 
+
 .hero {
     &__row {
       align-items: center;
@@ -28,7 +29,6 @@
     }
     
     &__cta {
-      // Override btn-primary pour le Hero : bouton blanc
         background: $color-white;
         border-color: $color-white;
         color: $color-dark-blue;
@@ -72,7 +72,7 @@
         height: 30px;
         width: auto;
         opacity: 0.8;
-        filter: brightness(0) invert(1); // Logos blancs sur fond bleu
+        filter: brightness(0) invert(1); 
         transition: $transition-opacity;
         
         &:hover {
@@ -87,7 +87,6 @@
       border-bottom-right-radius: calc($radius-xl * 4);
       padding: $space-10 $space-8 $space-12 $space-8;
       
-      // Header : Titre + Bouton
       &-header {
         display: flex;
         justify-content: space-between;
@@ -113,7 +112,6 @@
       }
     }
     
-    // Bank Card
     &__bank-card {
       aspect-ratio: 16 / 10;
       background: $color-dark-blue;

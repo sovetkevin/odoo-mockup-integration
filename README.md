@@ -142,7 +142,7 @@ Le Hero utilise `overflow: hidden` avec la diagonale. La section Awards gère le
 
 ### Navigation interne (ancres)
 
-Les liens de démo pointent vers des **`id` sur les sections** (`#home`, `#products`, `#pages`, `#app`, `#docs`, `#buy`, `#case-studies`, `#signin`, `#footer`, etc.) plutôt que vers `href="#"`, pour éviter le saut en tête de page et garder un comportement cohérent au clavier / lecteur d’écran. Un **`scroll-margin-top`** compense le header fixe (`sections/_custom.scss`).
+Les liens de démo pointent vers des **`id` sur les sections** (`#home`, `#products`, `#pages`, `#app`, `#docs`, `#buy`, `#case-studies`, `#signin`, `#footer`, etc.) plutôt que vers `href="#"`, pour éviter le saut en tête de page et garder un comportement cohérent au clavier / lecteur d’écran. Un **`scroll-margin-top`** compense le header fixe (règle en fin de `sections/_header.scss`).
 
 ## Licence
 

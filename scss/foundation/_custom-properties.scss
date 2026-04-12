@@ -1,4 +1,3 @@
-// Si compilation isolée : même dossier que `_tokens.scss`.
 @import 'tokens';
 
 // Custom properties CSS (bridge depuis les tokens SCSS)
@@ -45,7 +44,7 @@
   --heading-h5-size: #{clamp($font-size-body, 0.45vw, $font-size-md)};
   --heading-h6-size: #{clamp($font-size-sm, 0.3vw, 0.875rem)};
 
-  // Titres de section / corps : réutiliser les mêmes `var()` partout au lieu de dupliquer les clamp()
+  // Titres de section / corps
   --text-section-title: var(--heading-h2-size);
   --text-section-title-sm: var(--heading-h3-size);
   --text-body: var(--font-size-base);

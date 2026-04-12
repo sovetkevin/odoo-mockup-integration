@@ -1,4 +1,5 @@
-// Header styles
+// Header 
+
 .header {
     background: $color-brand-primary;
     position: fixed;
@@ -128,7 +129,6 @@
       
       // Bouton "Buy now"
       &-btn {
-        // Override btn-primary pour le Header : bouton blanc
         display: inline-flex;
         align-items: center;
         background: $color-white;
@@ -149,7 +149,7 @@
       }
     }
     
-    // Mobile : CTA passe dans le collapse
+    // Responsive
     @include bp-down(lg) {
       &__navbar {
         .navbar-collapse {
@@ -204,3 +204,11 @@
       }
     }
   }
+
+// Ancres : le header est fixe — décalage du scroll pour ne pas masquer les titres ciblés
+section[id],
+main#main-content,
+footer#footer,
+[id^='footer-'] {
+  scroll-margin-top: calc(var(--header-height, 4rem) + #{$space-4});
+}

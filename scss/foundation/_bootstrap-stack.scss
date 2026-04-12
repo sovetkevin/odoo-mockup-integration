@@ -1,16 +1,4 @@
 // Pile Bootstrap complète (non modulaire) — ordre attendu par la doc officielle.
-//
-// Les surcharges vivent dans `foundation/_variables.scss`, importé avant ce fichier.
-// Bootstrap déclare ses variables avec `!default` : toute variable déjà définie y est donc
-// respectée lors de `@import 'bootstrap/scss/variables'`.
-//
-// Étapes effectives ici :
-// 1. Fonctions Bootstrap
-// 2. Variables Bootstrap (défauts + nos surcharges déjà en mémoire Sass)
-// 3. Variables dark Bootstrap
-// 4. Fusion `$theme-colors` avec `$custom-colors` (avant `maps` pour les utilitaires)
-// 5. Maps, mixins, utilitaires
-// 6. Composants et API utilitaires
 @import 'bootstrap/scss/mixins/banner';
 @include bsBanner('');
 

@@ -2,13 +2,12 @@
 .awards {
   // Piste du carrousel : hauteur de référence pour l’alternance flex-start / flex-end
   // (les cartes gardent une hauteur naturelle selon le contenu).
-  $awards-carousel-track-height: 350px; // ~300px + marge zigzag (équivalent ancien layout)
-
+  $awards-carousel-track-height: 350px; 
   background: $color-surface-awards;
   padding: $space-32 0;
   @include section-diagonal-padding-bottom($space-32);
   @include section-diagonal-bottom-mirror-v;
-  overflow-x: hidden; // ✅ Coupe le débordement horizontal ici
+  overflow-x: hidden;
   
   &__header {
     text-align: left;
@@ -141,8 +140,6 @@
     @include section-diagonal-padding-bottom($space-12, $space-4);
     overflow-x: hidden;
 
-    // Carrousel horizontal : scroll interne, barre masquée.
-    // Padding : overflow-x crée un scrollport qui rogne aussi les box-shadow — on réserve de la place pour hover + ombre.
     &__carousel-wrapper {
       overflow-x: auto;
       overflow-y: auto;

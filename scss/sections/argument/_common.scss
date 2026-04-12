@@ -1,4 +1,4 @@
-// Argument : `.section`, espacements colonnes, bloc `.video-preview` (Features / Install — mixins `el-video-preview-*`)
+// Sections des arguments : styles partagés
 
 .section {
   padding: $space-16 0;
@@ -52,7 +52,7 @@
   }
 }
 
-// Vignette + bouton Play (sections Features & Install ; Tools réutilise les mixins sur `.tools-preview__video`)
+// Vignette + bouton Play 
 .video-preview {
   position: relative;
   @include el-video-preview-frame;
@@ -63,5 +63,15 @@
 
   &__btn {
     @include el-video-preview-btn;
+  }
+
+  @include bp-down(lg) {
+    aspect-ratio: 16 / 9;
+
+    &__thumbnail {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 }

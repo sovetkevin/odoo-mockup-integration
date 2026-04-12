@@ -1,4 +1,5 @@
 // Footer
+
 .footer {
   background: $color-dark-blue;
   color: $color-white;
@@ -42,7 +43,7 @@
     &-btn {
       &--doc {
         i {
-          color: $color-brand-primary; // Icône bleue sur fond blanc
+          color: $color-brand-primary; 
           margin-right: $space-2;
         }
       }
@@ -56,7 +57,7 @@
   &__logo {
     height: 36px;
     margin-bottom: $space-6;
-    filter: brightness(0) invert(1); // Logo blanc
+    filter: brightness(0) invert(1); 
   }
   
   &__description {

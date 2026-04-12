@@ -59,10 +59,6 @@ $font-weight-extrabold: 800;
 $font-weight-black: 900;
 
 // --- Tailles (rem) : échelle croissante ; le corps = 1rem (base de lecture)
-// 1er argument des clamp() dans les composants ; pas de *-min / *-max dédiés dans les tokens.
-//
-// Important : ne pas passer ces clamp comme `$font-size-base` Bootstrap (`_variables.scss` :
-// `$font-size-root`) — Bootstrap multiplie la base pour lead, small, etc.
 $font-size-root: 1rem;
 
 $font-size-xs: 0.75rem;
@@ -86,10 +82,8 @@ $letter-spacing-normal: 0;
 $letter-spacing-wide: 0.025em;
 $letter-spacing-wider: 0.05em;
 
-// Titres : réutiliser l’échelle — ex. h1 → `$font-size-3xl` ; h2 → `clamp($font-size-xl, …, $font-size-2xl)` ; h3 → `clamp($font-size-lg, …, $font-size-xl)`.
 
 // --- Breakpoints (source unique : media queries du projet + `$grid-breakpoints` Bootstrap) ---
-// Modifier uniquement ce map pour recaler grille BS, navbar `collapse` et sections custom.
 $breakpoints: (
   xs: 0,
   sm: 576px,

@@ -1,5 +1,9 @@
 // Surcharges globales Bootstrap : boutons, badges, cartes (après `bootstrap-stack`)
 
+body {
+  font-family: $font-family-primary;
+}
+
 .btn {
   @include el-button-layout;
 }

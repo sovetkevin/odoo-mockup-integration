@@ -1,32 +1,40 @@
 import '../scss/main.scss';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-console.log('Project initialized');
+if (import.meta.env.DEV) {
+  console.log('[dev] Odoo mockup — build OK');
+}
 
-// Video preview play/pause
+function setVideoPreviewButtonState(button, videoIsPlaying) {
+  button.dataset.action = videoIsPlaying ? 'pause' : 'play';
+  button.setAttribute('aria-pressed', String(videoIsPlaying));
+  button.setAttribute(
+    'aria-label',
+    videoIsPlaying ? 'Mettre la vidéo en pause' : 'Lire la vidéo'
+  );
+
+  const label = videoIsPlaying ? 'Pause video' : 'Play video';
+  const icon = document.createElement('i');
+  icon.className = videoIsPlaying ? 'bi bi-pause' : 'bi bi-play';
+  icon.setAttribute('aria-hidden', 'true');
+
+  button.replaceChildren();
+  button.append(document.createTextNode(`${label} `), icon);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const videoButtons = document.querySelectorAll('.video-preview__btn');
-  
-  videoButtons.forEach(btn => {
-    btn.addEventListener('click', function() {
-      const isPlaying = this.dataset.action === 'pause';
-      
-      if (isPlaying) {
-        // Pause action
-        this.dataset.action = 'play';
-        this.innerHTML = `Play video <i class="bi bi-play"></i>`;
-      } else {
-        // Play action
-        this.dataset.action = 'pause';
-        this.innerHTML = `Pause video <i class="bi bi-pause"></i>`;
-      }
-      
-      // TODO: Implémenter la vraie vidéo avec <video> tag plus tard
-      console.log(isPlaying ? 'Video paused' : 'Video playing');
+
+  videoButtons.forEach((btn) => {
+    btn.setAttribute('aria-pressed', 'false');
+    btn.setAttribute('aria-label', 'Lire la vidéo');
+
+    btn.addEventListener('click', () => {
+      const willStartPlaying = btn.dataset.action === 'play';
+      setVideoPreviewButtonState(btn, willStartPlaying);
     });
   });
 
-  // Header: cache au scroll vers le bas, réapparaît au scroll vers le haut
   const header = document.querySelector('.header');
   if (!header) return;
 
@@ -63,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Si le menu mobile est ouvert, on force le header visible
   if (collapse) {
     collapse.addEventListener('show.bs.collapse', () => {
       header.classList.remove('header--hidden');

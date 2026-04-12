@@ -1,5 +1,11 @@
-// Styles globaux custom
-
 body {
   font-family: $font-family-primary;
+}
+
+// Ancres : le header est fixe — décalage du scroll pour ne pas masquer les titres
+section[id],
+main#main-content,
+footer#footer,
+[id^='footer-'] {
+  scroll-margin-top: calc(var(--header-height, 4rem) + #{$space-4});
 }

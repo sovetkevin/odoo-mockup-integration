@@ -21,10 +21,10 @@
   </head>
   <body>
     <header class="header">
-      <nav class="navbar navbar-expand-lg navbar-light header__navbar">
+      <nav class="navbar navbar-expand-lg navbar-dark header__navbar">
         <div class="container">
           <!-- Logo -->
-          <a class="navbar-brand header__logo" href="#">
+          <a class="navbar-brand header__logo" href="#home">
             <img src="assets/images/logo-odoo.svg" alt="Odoo" class="header__logo-img">
           </a>
           
@@ -75,10 +75,10 @@
       </nav>
     </header>
 
-    <main>
+    <main id="main-content">
       
       <!-- Hero section -->
-      <section class="hero">
+      <section class="hero" id="home">
         <div class="container">
           <div class="row hero__row">
             
@@ -89,7 +89,7 @@
                 Build a beautiful, modern website with flexible components built from scratch.
               </p>
               
-              <a href="#get-started" class="btn btn-primary hero__cta">
+              <a href="#products" class="btn btn-primary hero__cta">
                 Get started
                 <i class="bi bi-plus-lg"></i>
               </a>
@@ -120,7 +120,7 @@
                 <!-- Header : Titre + Bouton -->
                 <div class="hero__card-header">
                   <h3 class="hero__card-title card-title">Manage cards</h3>
-                  <a href="#" class="btn btn-sm btn-light hero__card-btn">Add new</a>
+                  <a href="#products" class="btn btn-sm btn-light hero__card-btn">Add new</a>
                 </div>
                 
                 <!-- Bank Card -->
@@ -174,7 +174,7 @@
                   </div>
                   
                   <!-- View all link -->
-                  <a href="#" class="hero__expense-link">
+                  <a href="#case-studies" class="hero__expense-link">
                     View all
                     <i class="bi bi-chevron-right"></i>
                   </a>
@@ -189,7 +189,7 @@
       </section>
 
       <!-- Tools section -->
-      <section class="section section--image-left section--tools">
+      <section class="section section--image-left section--tools" id="products">
         <div class="container">
           <div class="row">
             
@@ -274,7 +274,7 @@
       </section>
 
       <!-- Features section -->
-      <section class="section section--image-right section--features">
+      <section class="section section--image-right section--features" id="pages">
         <div class="container">
           <div class="row">
             
@@ -316,7 +316,7 @@
       </section>
 
       <!-- Technology section -->
-      <section class="section section--image-left section--technology">
+      <section class="section section--image-left section--technology" id="app">
         <div class="container">
           <div class="row">
             
@@ -413,7 +413,7 @@
       </section>
 
       <!-- Install section -->
-      <section class="section section--image-right section--install">
+      <section class="section section--image-right section--install" id="buy">
         <div class="container">
           <div class="row">
             
@@ -426,7 +426,7 @@
               </p>
               
               <div class="app-stores">
-                <a href="#" class="btn btn-dark app-stores__btn">
+                <a href="#buy" class="btn btn-dark app-stores__btn">
                   <i class="bi bi-apple app-stores__icon"></i>
                   <div class="app-stores__text">
                     <span class="app-stores__label">Download on the</span>
@@ -434,7 +434,7 @@
                   </div>
                 </a>
                 
-                <a href="#" class="btn btn-dark app-stores__btn">
+                <a href="#buy" class="btn btn-dark app-stores__btn">
                   <i class="bi bi-google-play app-stores__icon"></i>
                   <div class="app-stores__text">
                     <span class="app-stores__label">Download on the</span>
@@ -460,7 +460,7 @@
       </section>
 
       <!-- Infinite Solutions section -->
-      <section class="infinite-solutions">
+      <section class="infinite-solutions" id="signin">
         <div class="container">
           <div class="infinite-solutions__box">
             <div class="infinite-solutions__content">
@@ -469,7 +469,7 @@
                 Intuitive markup, powerful and lightning-fast build tools, everything you need to turn your ideas into incredible products.
               </p>
             </div>
-            <a href="#learn-more" class="btn btn-light infinite-solutions__cta">
+            <a href="#case-studies" class="btn btn-light infinite-solutions__cta">
               Learn more
               <i class="bi bi-arrow-right"></i>
             </a>
@@ -478,7 +478,7 @@
       </section>
 
       <!-- Awards section -->
-      <section class="awards">
+      <section class="awards" id="case-studies">
         <div class="container">
           <!-- Header centré -->
           <div class="awards__header">
@@ -513,7 +513,7 @@
                 <img src="assets/images/logo-amazon.svg" alt="Amazon" class="awards__card-logo">
                 <div class="awards__card-content card-body">
                   <p class="awards__card-text">They build modern looking websites easily using Tabs.</p>
-                  <a href="#" class="awards__card-link">Learn more</a>
+                  <a href="#docs" class="awards__card-link">Learn more</a>
                 </div>
               </div>
               
@@ -522,7 +522,7 @@
                 <img src="assets/images/logo-slack.svg" alt="Slack" class="awards__card-logo">
                 <div class="awards__card-content card-body">
                   <p class="awards__card-text">They build modern looking websites easily using Trello.</p>
-                  <a href="#" class="awards__card-link">Learn more</a>
+                  <a href="#docs" class="awards__card-link">Learn more</a>
                 </div>
               </div>
               
@@ -547,7 +547,7 @@
                 <img src="assets/images/logo-paypal.svg" alt="PayPal" class="awards__card-logo">
                 <div class="awards__card-content card-body">
                   <p class="awards__card-text">They build modern looking websites easily using Docker.</p>
-                  <a href="#" class="awards__card-link">Learn more</a>
+                  <a href="#docs" class="awards__card-link">Learn more</a>
                 </div>
               </div>
               
@@ -557,7 +557,7 @@
       </section>
 
       <!-- FAQ section -->
-      <section class="faq">
+      <section class="faq" id="docs">
         <div class="container">
           
           <!-- Header -->
@@ -701,11 +701,11 @@
           <div class="faq__cta">
             <h3 class="faq__cta-title">I want to start a new project.</h3>
             <div class="faq__cta-buttons">
-              <a href="#" class="btn btn-primary faq__cta-btn">
+              <a href="#buy" class="btn btn-primary faq__cta-btn">
                 Buy now
                 <i class="bi bi-arrow-right"></i>
               </a>
-              <a href="#" class="faq__cta-link">Learn more</a>
+              <a href="#footer-contact" class="faq__cta-link">Learn more</a>
             </div>
           </div>
           
@@ -715,21 +715,21 @@
     </main>
     
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" id="footer">
       <div class="container">
         
         <!-- Bloc 1 : CTA top -->
-        <div class="footer__cta">
+        <div class="footer__cta" id="footer-contact">
           <div class="footer__cta-content">
             <p class="footer__cta-title">Brilliant solutions for your ideas</p>
             <p class="footer__cta-subtitle">Modern looking websites.</p>
           </div>
           <div class="footer__cta-buttons">
-            <a href="#" class="btn btn-light footer__cta-btn footer__cta-btn--doc">
+            <a href="#docs" class="btn btn-light footer__cta-btn footer__cta-btn--doc">
               <i class="bi bi-book"></i>
               Documentation
             </a>
-            <a href="#" class="btn btn-primary footer__cta-btn">Purchase now</a>
+            <a href="#buy" class="btn btn-primary footer__cta-btn">Purchase now</a>
           </div>
         </div>
         
@@ -744,22 +744,22 @@
             </p>
             <ul class="footer__social">
               <li class="footer__social-item">
-                <a href="#" class="footer__social-link" aria-label="Dribbble">
+                <a href="#footer" class="footer__social-link" aria-label="Dribbble (démo)">
                   <i class="bi bi-dribbble"></i>
                 </a>
               </li>
               <li class="footer__social-item">
-                <a href="#" class="footer__social-link" aria-label="GitHub">
+                <a href="#footer" class="footer__social-link" aria-label="GitHub (démo)">
                   <i class="bi bi-github"></i>
                 </a>
               </li>
               <li class="footer__social-item">
-                <a href="#" class="footer__social-link" aria-label="Instagram">
+                <a href="#footer" class="footer__social-link" aria-label="Instagram (démo)">
                   <i class="bi bi-instagram"></i>
                 </a>
               </li>
               <li class="footer__social-item">
-                <a href="#" class="footer__social-link" aria-label="Facebook">
+                <a href="#footer" class="footer__social-link" aria-label="Facebook (démo)">
                   <i class="bi bi-facebook"></i>
                 </a>
               </li>
@@ -770,32 +770,32 @@
           <div class="col-lg-6 offset-lg-2">
             <div class="row footer__nav-row">
               
-              <div class="col-12 col-sm-4 col-lg-4">
+              <div class="col-12 col-sm-4 col-lg-4" id="footer-account">
                 <p class="footer__nav-title">Account</p>
                 <ul class="footer__nav-list nav">
-                  <li class="nav-item"><a href="#" class="footer__nav-link nav-link">Profile</a></li>
-                  <li class="nav-item"><a href="#" class="footer__nav-link nav-link">Settings</a></li>
-                  <li class="nav-item"><a href="#" class="footer__nav-link nav-link">Billing</a></li>
-                  <li class="nav-item"><a href="#" class="footer__nav-link nav-link">Notifications</a></li>
+                  <li class="nav-item"><a href="#signin" class="footer__nav-link nav-link">Profile</a></li>
+                  <li class="nav-item"><a href="#signin" class="footer__nav-link nav-link">Settings</a></li>
+                  <li class="nav-item"><a href="#signin" class="footer__nav-link nav-link">Billing</a></li>
+                  <li class="nav-item"><a href="#signin" class="footer__nav-link nav-link">Notifications</a></li>
                 </ul>
               </div>
               
-              <div class="col-12 col-sm-4 col-lg-4">
+              <div class="col-12 col-sm-4 col-lg-4" id="footer-about">
                 <p class="footer__nav-title">About</p>
                 <ul class="footer__nav-list nav">
-                  <li class="nav-item"><a href="#" class="footer__nav-link nav-link">Services</a></li>
-                  <li class="nav-item"><a href="#" class="footer__nav-link nav-link">Pricing</a></li>
-                  <li class="nav-item"><a href="#" class="footer__nav-link nav-link">Contact</a></li>
-                  <li class="nav-item"><a href="#" class="footer__nav-link nav-link">Careers</a></li>
+                  <li class="nav-item"><a href="#products" class="footer__nav-link nav-link">Services</a></li>
+                  <li class="nav-item"><a href="#buy" class="footer__nav-link nav-link">Pricing</a></li>
+                  <li class="nav-item"><a href="#footer-contact" class="footer__nav-link nav-link">Contact</a></li>
+                  <li class="nav-item"><a href="#case-studies" class="footer__nav-link nav-link">Careers</a></li>
                 </ul>
               </div>
               
-              <div class="col-12 col-sm-4 col-lg-4">
+              <div class="col-12 col-sm-4 col-lg-4" id="footer-company">
                 <p class="footer__nav-title">Company</p>
                 <ul class="footer__nav-list nav">
-                  <li class="nav-item"><a href="#" class="footer__nav-link nav-link">Community</a></li>
-                  <li class="nav-item"><a href="#" class="footer__nav-link nav-link">Help center</a></li>
-                  <li class="nav-item"><a href="#" class="footer__nav-link nav-link">Support</a></li>
+                  <li class="nav-item"><a href="#docs" class="footer__nav-link nav-link">Community</a></li>
+                  <li class="nav-item"><a href="#docs" class="footer__nav-link nav-link">Help center</a></li>
+                  <li class="nav-item"><a href="#docs" class="footer__nav-link nav-link">Support</a></li>
                 </ul>
               </div>
               
@@ -809,10 +809,10 @@
           <p class="footer__copyright">
             © <strong>Odoo</strong>. All rights reserved
           </p>
-          <nav class="footer__legal nav">
-            <a href="#" class="footer__legal-link nav-link">Terms</a>
-            <a href="#" class="footer__legal-link nav-link">Privacy</a>
-            <a href="#" class="footer__legal-link nav-link">Cookies</a>
+          <nav class="footer__legal nav" id="footer-legal" aria-label="Mentions légales">
+            <a href="#footer-legal" class="footer__legal-link nav-link">Terms</a>
+            <a href="#footer-legal" class="footer__legal-link nav-link">Privacy</a>
+            <a href="#footer-legal" class="footer__legal-link nav-link">Cookies</a>
           </nav>
         </div>
         

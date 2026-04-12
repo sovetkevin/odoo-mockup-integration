@@ -1,4 +1,5 @@
 import '../scss/main.scss';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 console.log('Project initialized');
 

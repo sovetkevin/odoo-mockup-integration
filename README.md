@@ -110,7 +110,14 @@ Les tokens alimentent les **overrides Bootstrap** (`foundation/_variables.scss`)
 npm run build
 ```
 
-Le dossier `dist/` contient les assets prêts à être servis. La démo GitHub Pages utilise un **`base`** Vite adapté au sous-chemin du dépôt (`vite.config.js`).
+Le dossier `dist/` contient les assets prêts à être servis.
+
+**`base` Vite** (`vite.config.js`) :
+
+- **`npm run dev`** — `base` = `/` : chemins comme en racine du site (pratique en local).
+- **`npm run build`** — `base` = `/odoo-mockup-integration/` : chemins compatibles avec GitHub Pages pour ce dépôt.
+
+Pour un autre hébergement ou un fork, ajuster le sous-chemin dans `vite.config.js` ou utiliser une variable d’environnement si besoin.
 
 **Démo :** [kevinsovet.github.io/odoo-mockup-integration/](https://kevinsovet.github.io/odoo-mockup-integration/)
 
@@ -118,7 +125,8 @@ Le dossier `dist/` contient les assets prêts à être servis. La démo GitHub P
 
 ### Bootstrap
 
-Import complet du stack SCSS Bootstrap pour garder la main sur les variables ; les composants utilisés sont ceux de la maquette (navbar, grid, boutons, cartes, accordéon, barre de progression, etc.).
+- **CSS** : import complet du stack SCSS Bootstrap (`foundation/_bootstrap-stack`) pour piloter les variables ; composants utilisés selon la maquette (navbar, grid, boutons, cartes, accordéon, progression, etc.).
+- **JS** : `bootstrap.bundle.min.js` est importé depuis **`npm`** dans `js/main.js` (même version que le package), pas de CDN — évite les divergences de version avec le SCSS.
 
 ### BEM
 

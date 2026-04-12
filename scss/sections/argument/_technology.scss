@@ -74,14 +74,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: clamp($font-size-md, 0.45vw, $font-size-lg);
+      font-size: var(--font-size-md);
       font-weight: $font-weight-semibold;
       color: $color-white;
       flex-shrink: 0;
     }
     
     &__name {
-      font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+      font-size: var(--text-body);
       font-weight: $font-weight-semibold;
       color: $color-text-primary;
       margin: 0;
@@ -92,7 +92,7 @@
       background: none;
       border: none;
       color: $color-text-muted;
-      font-size: clamp($font-size-md, 0.45vw, $font-size-lg);
+      font-size: var(--font-size-md);
       cursor: pointer;
       padding: 0;
       transition: $transition-color;
@@ -126,7 +126,7 @@
       flex-shrink: 0;
       
       i {
-        font-size: clamp($font-size-xl, 1.25vw, $font-size-2xl);
+        font-size: var(--font-size-xl);
       }
     }
     
@@ -135,14 +135,14 @@
     }
     
     &__title {
-      font-size: clamp($font-size-md, 0.45vw, $font-size-lg);
+      font-size: var(--font-size-md);
       font-weight: $font-weight-semibold;
       color: $color-text-primary;
       margin: 0 0 $space-1;
     }
     
     &__subtitle {
-      font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+      font-size: var(--text-body);
       color: $color-text-muted;
     }
   }
@@ -174,7 +174,7 @@
     }
     
     &__title {
-      font-size: clamp($font-size-md, 0.45vw, $font-size-lg);
+      font-size: var(--font-size-md);
       font-weight: $font-weight-semibold;
       color: $color-text-primary;
       margin: 0;
@@ -212,7 +212,7 @@
       background: none;
       border: none;
       color: $color-text-muted;
-      font-size: clamp($font-size-md, 0.45vw, $font-size-lg);
+      font-size: var(--font-size-md);
       cursor: pointer;
       padding: 0;
       transition: $transition-color;

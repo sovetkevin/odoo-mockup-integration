@@ -20,7 +20,7 @@
   }
   
   &__title {
-    font-size: clamp($font-size-lg, 1.75vw, $font-size-xl);
+    font-size: var(--text-section-title-sm);
     font-weight: $font-weight-semibold;
     margin: 0;
     line-height: $line-height-tight;
@@ -92,7 +92,7 @@
         display: flex;
         justify-content: center;
         gap: $space-1;
-        font-size: clamp($font-size-lg, 0.6vw, $font-size-xl);
+        font-size: var(--font-size-lg);
         margin-bottom: $space-4;
         
         .bi-star-fill {
@@ -106,13 +106,13 @@
       
       .awards__card-score {
         font-weight: $font-weight-semibold;
-        font-size: clamp($font-size-lg, 0.6vw, $font-size-xl);
+        font-size: var(--font-size-lg);
         margin: 0;
         color: $color-text-primary;
       }
       
       .awards__card-reviews {
-        font-size: clamp($font-size-sm, 0.22vw, 0.875rem);
+        font-size: var(--text-caption);
         color: $color-text-muted;
       }
     }
@@ -123,7 +123,7 @@
         color: $color-text-muted;
         margin: 0 0 $space-4 0;
         line-height: $line-height-relaxed;
-        font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+        font-size: var(--text-body);
         overflow-wrap: break-word;
         word-break: break-word;
       }
@@ -161,7 +161,7 @@
     }
     
     &__title {
-      font-size: clamp($font-size-lg, 1.75vw, $font-size-xl);
+      font-size: var(--text-section-title-sm);
     }
     
     &__carousel {

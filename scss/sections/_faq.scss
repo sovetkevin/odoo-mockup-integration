@@ -8,14 +8,14 @@
   }
   
   &__title {
-    font-size: clamp($font-size-xl, 3vw, $font-size-2xl);
+    font-size: var(--text-section-title);
     font-weight: $font-weight-semibold;
     margin-bottom: $space-4;
   }
   
   &__subtitle {
     color: $color-text-muted;
-    font-size: clamp($font-size-lg, 0.45vw, $font-size-lg);
+    font-size: $font-size-lg;
     margin: 0;
   }
   
@@ -54,7 +54,7 @@
       &__content {
         display: flex;
         align-items: center;
-        font-size: clamp($font-size-lg, 0.45vw, $font-size-lg);
+        font-size: $font-size-lg;
         gap: $space-4;
         order: 1;
         flex: 1;
@@ -69,7 +69,7 @@
       &::before {
         content: '\F4FE'; 
         font-family: 'bootstrap-icons';
-        font-size: clamp($font-size-xl, 1.25vw, $font-size-2xl);
+        font-size: var(--font-size-xl);
         flex-shrink: 0;
         order: 2; 
       }
@@ -95,7 +95,7 @@
     margin-top: $space-20;
     
     &-title {
-      font-size: clamp($font-size-lg, 1.75vw, $font-size-xl);
+      font-size: var(--text-section-title-sm);
       font-weight: $font-weight-semibold;
       margin-bottom: $space-6;
     }
@@ -135,13 +135,13 @@
     }
     
     &__title {
-      font-size: clamp($font-size-lg, 1.75vw, $font-size-xl);
+      font-size: var(--text-section-title-sm);
     }
     
     .accordion {
       &-button {
         padding: $space-3 $space-4;
-        font-size: clamp($font-size-sm, 0.22vw, 0.875rem);
+        font-size: var(--text-caption);
       }
       
       &-body {

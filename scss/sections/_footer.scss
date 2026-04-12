@@ -21,7 +21,7 @@
     }
     
     &-title {
-      font-size: clamp($font-size-xl, 3vw, $font-size-2xl);
+      font-size: var(--text-section-title);
       font-weight: $font-weight-semibold;
       margin: 0 0 $space-2;
       color: $color-white;
@@ -30,7 +30,7 @@
     &-subtitle {
       color: rgba($color-white, 0.8);
       margin: 0;
-      font-size: clamp($font-size-lg, 0.45vw, $font-size-lg);
+      font-size: $font-size-lg;
     }
     
     &-buttons {
@@ -61,7 +61,7 @@
   
   &__description {
     color: rgba($color-white, 0.6);
-    font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+    font-size: var(--text-body);
     line-height: $line-height-relaxed;
     margin-bottom: $space-6;
   }
@@ -94,7 +94,7 @@
       }
       
       i {
-        font-size: clamp($font-size-lg, 0.6vw, $font-size-xl);
+        font-size: var(--font-size-lg);
       }
     }
   }
@@ -102,7 +102,7 @@
   &__nav {
     &-title {
       font-weight: $font-weight-semibold;
-      font-size: clamp($font-size-md, 0.45vw, $font-size-lg);
+      font-size: var(--font-size-md);
       margin-bottom: $space-4;
       color: $color-white;
     }
@@ -126,7 +126,7 @@
     &-link {
       color: rgba($color-white, 0.6);
       text-decoration: none;
-      font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+      font-size: var(--text-body);
       transition: $transition-color;
       padding: 0;
       
@@ -147,7 +147,7 @@
   &__copyright {
     color: rgba($color-white, 0.6);
     margin: 0;
-    font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+    font-size: var(--text-body);
     
     strong {
       font-weight: $font-weight-semibold;
@@ -162,7 +162,7 @@
     &-link {
       color: rgba($color-white, 0.6);
       text-decoration: none;
-      font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+      font-size: var(--text-body);
       transition: $transition-color;
       padding: 0;
       

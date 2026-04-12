@@ -169,7 +169,7 @@
   display: inline-block;
   padding: $space-2 $space-4;
   border-radius: $radius-full;
-  font-size: clamp($font-size-sm, 0.22vw, 0.875rem);
+  font-size: var(--text-caption);
   font-weight: $font-weight-semibold;
   line-height: 1;
 }
@@ -227,7 +227,7 @@
   top: $space-4;
   left: $space-4;
   background: $color-white;
-  font-size: clamp($font-size-sm, 0.22vw, 0.875rem);
+  font-size: var(--text-caption);
   color: $color-dark-blue;
   transition: $transition-background;
   box-shadow: $shadow-md;
@@ -238,6 +238,6 @@
   }
 
   i {
-    font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+    font-size: var(--text-body);
   }
 }

@@ -96,7 +96,7 @@
       &-link {
         color: $color-white;
         font-weight: $font-weight-medium;
-        font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+        font-size: var(--text-body);
         transition: $transition-color;
        
         

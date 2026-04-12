@@ -12,7 +12,7 @@
     
     &__title {
       color: $color-white;
-      font-size: clamp($font-size-3xl, 5vw, 3.25rem);
+      font-size: var(--heading-h1-size);
       font-weight: $font-weight-bold;
       line-height: $line-height-tight;
       margin-bottom: $space-4;
@@ -21,7 +21,7 @@
     
     &__subtitle {
       color: rgba($color-white, 0.9);
-      font-size: clamp($font-size-lg, 0.45vw, $font-size-lg);
+      font-size: $font-size-lg;
       line-height: $line-height-relaxed;
       margin-bottom: $space-12;
       max-width: 400px;
@@ -54,7 +54,7 @@
       gap: $space-10;
       &-label {
         color: $color-white;
-        font-size: clamp($font-size-sm, 0.22vw, 0.875rem);
+        font-size: var(--text-caption);
         font-weight: $font-weight-medium;
         margin-bottom: 0;
       }
@@ -96,7 +96,7 @@
       }
       
       &-title {
-        font-size: clamp($font-size-lg, 0.6vw, $font-size-xl);
+        font-size: var(--font-size-lg);
         font-weight: $font-weight-semibold;
         color: $color-text-primary;
         margin: 0;
@@ -163,7 +163,7 @@
       
       &-label {
         display: block;
-        font-size: clamp($font-size-xs, 0.2vw, 0.75rem);
+        font-size: var(--text-micro);
         text-transform: uppercase;
         letter-spacing: $letter-spacing-wide;
         opacity: 0.7;
@@ -188,7 +188,7 @@
       }
       
       &-value {
-        font-size: clamp($font-size-md, 0.45vw, $font-size-lg);
+        font-size: var(--font-size-md);
         font-weight: $font-weight-medium;
         margin: 0;
       }
@@ -212,20 +212,20 @@
       }
       
       &-title {
-        font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+        font-size: var(--text-body);
         font-weight: $font-weight-semibold;
         color: $color-text-primary;
         margin: 0 0 $space-1;
       }
       
       &-status {
-        font-size: clamp($font-size-sm, 0.22vw, 0.875rem);
+        font-size: var(--text-caption);
         color: $color-text-muted;
         margin: 0;
       }
       
       &-amount {
-        font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+        font-size: var(--text-body);
         font-weight: $font-weight-semibold;
         color: $color-text-primary;
         margin: 0;
@@ -237,7 +237,7 @@
         display: inline-flex;
         align-items: center;
         color: $color-brand-primary;
-        font-size: clamp($font-size-sm, 0.22vw, 0.875rem);
+        font-size: var(--text-caption);
         font-weight: $font-weight-medium;
         text-decoration: none;
         border-bottom: 1px dashed $color-brand-primary;
@@ -262,11 +262,11 @@
       @include section-diagonal-padding-bottom($space-12, $space-12);
       
       &__title {
-        font-size: clamp($font-size-xl, 3vw, $font-size-2xl);
+        font-size: var(--text-section-title);
       }
       
       &__subtitle {
-        font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+        font-size: var(--text-body);
       }
 
       &__partners {
@@ -285,7 +285,7 @@
         }
         
         &-title {
-          font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+          font-size: var(--text-body);
         }
       }
       
@@ -298,7 +298,7 @@
         }
         
         &-digits {
-          font-size: clamp($font-size-lg, 0.6vw, $font-size-xl);
+          font-size: var(--font-size-lg);
         }
         
         &-bottom {
@@ -306,7 +306,7 @@
         }
         
         &-value {
-          font-size: clamp($font-size-sm, 0.22vw, 0.875rem);
+          font-size: var(--text-caption);
         }
       }
       
@@ -317,11 +317,11 @@
         
         &-title,
         &-amount {
-          font-size: clamp($font-size-sm, 0.22vw, 0.875rem);
+          font-size: var(--text-caption);
         }
         
         &-status {
-          font-size: clamp($font-size-xs, 0.2vw, 0.75rem);
+          font-size: var(--text-micro);
         }
       }
       

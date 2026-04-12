@@ -38,7 +38,7 @@
     }
     
     &__title {
-      font-size: clamp($font-size-xl, 1.25vw, $font-size-2xl);
+      font-size: var(--font-size-xl);
       font-weight: $font-weight-semibold;
       margin-bottom: $space-6;
       color: $color-text-primary;
@@ -86,7 +86,7 @@
       }
 
       &__title {
-        font-size: clamp($font-size-lg, 0.6vw, $font-size-xl);
+        font-size: var(--font-size-lg);
         margin-bottom: $space-4;
       }
 
@@ -112,7 +112,7 @@
     }
     
     &__title {
-      font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+      font-size: var(--text-body);
       font-weight: $font-weight-medium;
       color: $color-text-primary;
       margin: 0;
@@ -123,7 +123,7 @@
       align-items: center;
       gap: $space-2;
       color: $color-text-muted;
-      font-size: clamp($font-size-body, 0.45vw, $font-size-md);
+      font-size: var(--text-body);
     }
     
     &__time {
@@ -131,7 +131,7 @@
     }
     
     i {
-      font-size: clamp($font-size-sm, 0.22vw, 0.875rem);
+      font-size: var(--text-caption);
     }
     
     // Bootstrap progress est deja stylise via les variables
@@ -142,7 +142,7 @@
       
       &__title,
       &__meta {
-        font-size: clamp($font-size-sm, 0.22vw, 0.875rem);
+        font-size: var(--text-caption);
       }
     }
   }

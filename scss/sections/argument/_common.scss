@@ -14,7 +14,7 @@
   }
 
   &__title {
-    font-size: clamp($font-size-xl, 3vw, $font-size-2xl);
+    font-size: var(--text-section-title);
     font-weight: $font-weight-semibold;
     margin-bottom: $space-8;
     line-height: $line-height-tight;
@@ -22,7 +22,7 @@
 
   &__text {
     color: $color-text-muted;
-    font-size: clamp($font-size-md, 0.45vw, $font-size-lg);
+    font-size: var(--font-size-md);
     margin-bottom: $space-10;
     line-height: $line-height-relaxed;
   }
@@ -35,7 +35,7 @@
     padding: $space-12 0;
 
     &__title {
-      font-size: clamp($font-size-lg, 1.75vw, $font-size-xl);
+      font-size: var(--text-section-title-sm);
     }
   }
 }

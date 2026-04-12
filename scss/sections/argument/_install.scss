@@ -20,7 +20,7 @@
   }
 
   &__icon {
-    font-size: clamp($font-size-xl, 1.25vw, $font-size-2xl);
+    font-size: var(--font-size-xl);
     color: $color-white;
   }
 
@@ -31,14 +31,14 @@
   }
 
   &__label {
-    font-size: clamp($font-size-xs, 0.2vw, 0.75rem);
+    font-size: var(--text-micro);
     opacity: 0.7;
     line-height: 1;
     margin-bottom: $space-1;
   }
 
   &__store {
-    font-size: clamp($font-size-lg, 0.45vw, $font-size-md);
+    font-size: var(--font-size-md);
     font-weight: $font-weight-semibold;
     line-height: 1;
   }

@@ -144,10 +144,6 @@ Le Hero utilise `overflow: hidden` avec la diagonale. La section Awards gère le
 
 Les liens de démo pointent vers des **`id` sur les sections** (`#home`, `#products`, `#pages`, `#app`, `#docs`, `#buy`, `#case-studies`, `#signin`, `#footer`, etc.) plutôt que vers `href="#"`, pour éviter le saut en tête de page et garder un comportement cohérent au clavier / lecteur d’écran. Un **`scroll-margin-top`** compense le header fixe (`sections/_custom.scss`).
 
-### Navbar `navbar-dark` (et non `navbar-light`)
-
-Bootstrap associe **`navbar-light`** à un fond **clair** (texte de liens **foncé**) et **`navbar-dark`** à un fond **sombre** (texte **clair**). Comme le header est sur fond **brand / bleu**, la classe adaptée est **`navbar-dark`** : les variables `$navbar-dark-*` du thème s’alignent avec ce contraste. Avec **`navbar-light`**, Bootstrap appliquait par défaut des couleurs de liens pensées pour un fond clair — d’où des surcharges SCSS pour forcer le blanc. Passer en **`navbar-dark`** rend l’intention alignée sur la maquette et sur l’accessibilité (thème sombre de barre).
-
 ## Licence
 
 MIT

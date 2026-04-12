@@ -10,7 +10,7 @@ function setVideoPreviewButtonState(button, videoIsPlaying) {
   button.setAttribute('aria-pressed', String(videoIsPlaying));
   button.setAttribute(
     'aria-label',
-    videoIsPlaying ? 'Mettre la vidéo en pause' : 'Lire la vidéo'
+    videoIsPlaying ? 'Pause video' : 'Play video'
   );
 
   const label = videoIsPlaying ? 'Pause video' : 'Play video';
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   videoButtons.forEach((btn) => {
     btn.setAttribute('aria-pressed', 'false');
-    btn.setAttribute('aria-label', 'Lire la vidéo');
+    btn.setAttribute('aria-label', 'Play video');
 
     btn.addEventListener('click', () => {
       const willStartPlaying = btn.dataset.action === 'play';

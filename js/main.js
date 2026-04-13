@@ -1,3 +1,14 @@
+// Retire le loader dès que le DOM est prêt
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.add('css-loaded');
+  
+  // Supprime le loader du DOM après la transition
+  setTimeout(() => {
+    const loader = document.getElementById('css-loader');
+    if (loader) loader.remove();
+  }, 300);
+});
+
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 if (import.meta.env.DEV) {

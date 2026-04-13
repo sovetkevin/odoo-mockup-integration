@@ -116,7 +116,6 @@
     }
     
     &__bank-card {
-      aspect-ratio: 16 / 10;
       background: $color-dark-blue;
       border-radius: $radius-md;
       color: $color-white;
@@ -258,6 +257,12 @@
         }
       }
     }
+
+    @include bp-down(xl) {
+      &__bank-card {  
+        aspect-ratio: auto;
+      }
+    }
     
     // Responsive
     @include bp-down(lg) {
@@ -294,7 +299,6 @@
       }
       
       &__bank-card {
-        aspect-ratio: auto;
         margin-bottom: $space-4;
         
         &-logo {

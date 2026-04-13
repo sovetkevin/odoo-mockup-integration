@@ -1,8 +1,8 @@
-// Retire le loader dès que le DOM est prêt
-document.addEventListener('DOMContentLoaded', () => {
+// Attend que le CSS soit vraiment chargé
+window.addEventListener('load', () => {
   document.body.classList.add('css-loaded');
   
-  // Supprime le loader du DOM après la transition
+  // Supprime le loader après la transition
   setTimeout(() => {
     const loader = document.getElementById('css-loader');
     if (loader) loader.remove();
